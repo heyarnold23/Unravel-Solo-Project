@@ -31,12 +31,25 @@ export const login = (user) => async (dispatch) => {
 };
 
 export const restoreUser = () => async (dispatch) => {
-  
   const response = await fetch('/api/session');
   const data = await response.json();
   dispatch(setUser(data.user));
   return response;
+};
 
+export const signup = (formData) => async (dispatch) => {
+  const {username, email, password} = formData;
+  const response = await csrfFetch('/api/users', {
+    method: 'POST',
+    body: JSON.stringify({
+      username,
+      email,
+      password
+    }),
+  });
+  const data = await response.json();
+  dispatch(setUser(data.user));
+  return response;
 };
 
 const initialState = { user: null };
