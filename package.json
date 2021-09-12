@@ -1,4 +1,13 @@
 {
+  "name": "soloproject",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyarnold23/Unravel-Solo-Project.git"
+  },
   "scripts": {
     "heroku-postbuild": "npm run build --prefix frontend",
     "install": "npm --prefix backend install backend && npm --prefix frontend install frontend",
@@ -10,5 +19,12 @@
   },
   "dependencies": {
     "react-icons": "^4.2.0"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heyarnold23/Unravel-Solo-Project/issues"
+  },
+  "homepage": "https://github.com/heyarnold23/Unravel-Solo-Project#readme"
 }
