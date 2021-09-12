@@ -4,12 +4,13 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import styles from './Navigation.module.css';
 import { RiHome3Line } from "react-icons/ri";
+import LoginFormModal from '../LoginFormModal';
+
 
 function Navigation({ isLoaded }){
     const sessionUser = useSelector(state => state.session.user);
 
     let sessionLinks;
-
     if (sessionUser) {
       sessionLinks = (
         <ProfileButton user={sessionUser} />
@@ -17,7 +18,7 @@ function Navigation({ isLoaded }){
     } else {
       sessionLinks = (
         <>
-          <NavLink to="/login">Log In</NavLink>
+          <LoginFormModal/>
           <NavLink to="/signup">Sign Up</NavLink>
         </>
       );

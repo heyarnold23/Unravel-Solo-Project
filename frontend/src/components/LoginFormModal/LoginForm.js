@@ -5,16 +5,16 @@ import { Redirect } from 'react-router-dom';
 import styles from './LoginForm.module.css';
 
 
-function LoginFormPage() {
+function LoginForm() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
+//   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return (
-    <Redirect to="/" />
-  );
+//   if (sessionUser) return (
+//     <Redirect to="/" />
+//   );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,4 +54,4 @@ function LoginFormPage() {
   );
 }
 
-export default LoginFormPage;
+export default LoginForm;
