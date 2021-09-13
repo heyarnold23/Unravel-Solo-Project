@@ -2,3 +2,26 @@
     font-size: 12px;
     font-family: 'Noto Sans JP', sans-serif;
 }
+
+/* #formHolder{
+    height: 50vh;
+    display: flex;
+    width: 50vh;
+} */
+
+#username{
+    display: flex;
+}
+
+#password{
+    display: flex;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50vh;
+    height: 50vh;
+}
