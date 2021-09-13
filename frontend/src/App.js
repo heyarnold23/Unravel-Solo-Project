@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import { LandingPage } from "./components/LandingPage/LandingPage";
+import SongPage from "./components/SongPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,9 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <LandingPage />
+          </Route>
+          <Route path='/songs/:id'>
+          <SongPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
