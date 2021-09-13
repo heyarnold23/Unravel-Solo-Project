@@ -29,7 +29,7 @@ const SongChart = () => {
                     // albumUrl, name, artistName
                     <div className={styles.listedSong}>
                         {/* link will eventually be the song page */}
-                        {/* <Link to='/signup'> */}
+                        <Link to={`/songs/${song.id}`}>
                             <li className={styles.insideSong} to='/'>
                                 <div className={styles.imgHolder}>
                                     <img src={song.albumUrl} alt={song.albumName} />
@@ -41,7 +41,7 @@ const SongChart = () => {
                                     {song.artistName}
                                 </div>
                             </li>
-                        {/* </Link> */}
+                        </Link>
                     </div>
                     )}
                 </ol>
