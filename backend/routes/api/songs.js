@@ -10,4 +10,10 @@ router.get('/', asyncHandler(async(req, res) => {
     res.json(songs)
 }));
 
+router.get('/:id', asyncHandler(async(req, res) => {
+    const song = await Song.findOne(
+        {where: {id: req.params.id}});
+    res.json(song)
+}));
+
 module.exports = router;
