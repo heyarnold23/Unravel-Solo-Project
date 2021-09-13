@@ -35,13 +35,15 @@ function ProfileButton({ user }) {
     <>
         <FiUser onClick={openMenu}/>
         {showMenu && (
-            <ul className="profile-dropdown">
-            <li>{user.username}</li>
-            <li>{user.email}</li>
-            <li>
-                <button onClick={logout}>Log Out</button>
-            </li>
-            </ul>
+            <div className={styles.popOut}>
+              <ul className="profile-dropdown">
+              <li>{user.username}</li>
+              <li>{user.email}</li>
+              <li>
+                  <button onClick={logout}>Log Out</button>
+              </li>
+              </ul>
+            </div>
         )}
     </>
   );

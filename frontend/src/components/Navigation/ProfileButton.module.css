@@ -1,0 +1,10 @@
+.popOut{
+    /* z-index: 3; */
+    position: absolute;
+    top: 40px;
+    right: 1rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 8px #B0A7A7;
+    /* overflow: hidden; */
+    width: 210px;
+}
