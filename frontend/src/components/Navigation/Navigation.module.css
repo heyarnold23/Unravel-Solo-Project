@@ -1,0 +1,48 @@
+.navBar{
+    display: flex;
+    position: relative;
+    right: 8px;
+    bottom: 8px;
+    background: #C70000;
+    height: 41px;
+    justify-content: space-between;
+    align-items: center;
+    width: 101.09%;
+    height: 100%;
+}
+
+.unravelText{
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #C70000;
+    text-shadow: -2px 2px 0px black,-1.5px 1.5px 0px black, -1px 1px 0px black;
+    /* text-shadow: -1px 1px 0px black; */
+    font-size: 30px;
+}
+
+.unravelDiv{
+    display: flex;
+}
+
+.links{
+    display: flex;
+    /* justify-self: flex-end; */
+    justify-content: flex-end;
+    width: 300px;
+    position: relative;
+    right: 5px;
+}
+
+.placeholder{
+    width: 300px;
+}
+
+.signUpText{
+    font-size: 12px;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    right: 20px;
+
+}

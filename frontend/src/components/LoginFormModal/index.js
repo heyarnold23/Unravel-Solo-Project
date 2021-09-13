@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Modal } from '../../context/Modal';
 import LoginForm from "./LoginForm";
-import { RiHome3Line } from "react-icons/ri";
+import styles from './LoginForm.module.css';
 
 
 function LoginFormModal(){
@@ -9,11 +9,12 @@ function LoginFormModal(){
 
   return (
     <>
-      <button
+      <span
         onClick={() => setShowModal(true)}
+        className={styles.signText}
       >
-        Log In
-      </button>
+        SIGN IN
+      </span>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <LoginForm />
