@@ -1,0 +1,24 @@
+/* .songImg{
+    height: 60px;
+    width: 60px;
+} */
+
+.imgHolder{
+    display: flex;
+    height: 60px;
+    width: 60px;
+}
+
+.listedSong{
+    display: flex;
+    height: 77.39px;
+    width: 828px;
+}
+
+/* .insideSong{
+
+} */
+
+.name{
+    display: flex;
+}
