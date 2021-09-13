@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    height: 38px;
+    width: 102%;
+    background: black;
+    position: relative;
+    right: 8px;
+    bottom: 8px;
+    justify-content: space-around;
+    align-items: center;
+
+
+    font-size: 12px;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    right: 20px;
+}

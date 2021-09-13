@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import styles from './Navigation.module.css';
 // import { RiHome3Line } from "react-icons/ri";
 import LoginFormModal from '../LoginFormModal';
+import Header from './Header';
 
 
 function Navigation({ isLoaded }){
@@ -23,11 +24,11 @@ function Navigation({ isLoaded }){
         </>
       );
     }
-//make unravel not a navlink but just text that onclick will take you home
     return (
+      <>
       <div className={styles.navBar}>
         <div className={styles.placeholder}>
-          <p>placeholder, maybe symbol</p>
+          {/* <p>placeholder, maybe symbol</p> */}
         </div>
           <div className={styles.unravelDiv}>
             <Link exact to="/" className={styles.unravelText}>UNRAVEL</Link>
@@ -36,6 +37,8 @@ function Navigation({ isLoaded }){
             {isLoaded && sessionLinks}
           </div>
       </div>
+      <Header />
+      </>
     );
 }
 
