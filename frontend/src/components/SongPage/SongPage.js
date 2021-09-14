@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {getSongs} from '../../store/songs';
+import Comments from '../Comments';
 
 import styles from './SongPage.module.css';
 
@@ -46,9 +47,10 @@ export default function SongPage(){
                     <div id={styles.lyricBodyDiv}>
                         <p>{song?.body}</p>
                         {/* Put below div back on 57 if doesnt work */}
-                        <div id={styles.commentDiv}>
+                        {/* <div id={styles.commentDiv}>
                             <p>hello</p>
-                        </div>
+                        </div> */}
+                        <Comments />
                     </div>
                     <div id={styles.annotateDiv}>
                         {song?.body}
