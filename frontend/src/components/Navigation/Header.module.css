@@ -3,9 +3,9 @@
     height: 38px;
     width: 102%;
     background: black;
-    position: relative;
+    /* position: relative;
     right: 8px;
-    bottom: 8px;
+    bottom: 8px; */
     justify-content: space-around;
     align-items: center;
 

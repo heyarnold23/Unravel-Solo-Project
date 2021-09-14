@@ -39,6 +39,17 @@ export default function SongPage(){
                     </div>
                 </div>
             </div>
+            <div id={styles.bodyDiv}>
+                <div id={styles.inBodyDiv}>
+                    {song.body}
+                </div>
+
+
+
+
+
+
+            </div>
         </>
     )
 }

@@ -2,9 +2,9 @@
     display: flex;
     height: 280px;
     width: 102%;
-    position: relative;
+    /* position: relative;
     right: 8px;
-    bottom: 8px;
+    bottom: 8px; */
     justify-content: center;
 }
 
@@ -54,4 +54,28 @@
 #songInfo{
     font-size: 20px;
     color: #e4e711;
+}
+
+#bodyDiv{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: whitesmoke;
+    /* position: relative; */
+    width: auto;
+    bottom: 8px;
+}
+
+#inBodyDiv{
+    display: flex;
+    margin-left: 2vw;
+    width: 970px;
+    background-color: white;
+    /* margin: auto; */
+    /* width: 60%; */
+  height: 100%;
+  min-width: 480px;
+
+  padding-bottom: 50px;
 }
