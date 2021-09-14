@@ -42,10 +42,14 @@ export default function SongPage(){
                 </div>
             </div>
             <div id={styles.bodyDiv}>
-                <div id={styles.inBodyDiv}>
-                    {song?.body}
+                <div id={styles.lyricAnnoContainer}>
+                    <div id={styles.lyricBodyDiv}>
+                        {song?.body}
+                    </div>
+                    <div id={styles.annotateDiv}>
+                        {song?.body}
+                    </div>
                 </div>
-
 
 
 
