@@ -16,9 +16,29 @@ export default function SongPage(){
     },[dispatch, id])
 
     // console.log('songggggg', song);
-    
 
     return(
-        <h2>{song.artistName}</h2>
+        <>
+            <div className={styles.headContainer}
+                style={{ backgroundImage: `url(${song.backgroundArtUrl})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+            >
+                <div className={styles.inContainer}>
+                    <div className={styles.songInfoContainer}>
+                        <div id={styles.albumImgDiv}>
+                            <img src={`${song.albumUrl}`} alt="" />
+                        </div>
+                        <div id={styles.songDetails}>
+                            {song.name}
+                            <div id={styles.artistInfo}>
+                                {song.artistName}
+                            </div>
+                            <div id={styles.songInfo}>
+                                <span style={{color: `#9A9A9A`}}>Album</span> {song.albumName}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }

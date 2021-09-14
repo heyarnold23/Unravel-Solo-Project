@@ -10,8 +10,9 @@
     align-items: center;
 
 
-    font-size: 12px;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    /* font-family: 'Noto Sans JP', sans-serif; */
+    font-family: 'Urbanist', sans-serif;
     text-decoration: none;
     color: white;
     position: relative;

@@ -1,0 +1,57 @@
+.headContainer{
+    display: flex;
+    height: 280px;
+    width: 102%;
+    position: relative;
+    right: 8px;
+    bottom: 8px;
+    justify-content: center;
+}
+
+.inContainer{
+    width: 970px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.songInfoContainer{
+    display: flex;
+    justify-content: start;
+    position: relative;
+    top: 4.4vh;
+    right: 4.4vh;
+}
+
+#albumImgDiv{
+    display:flex;
+    height: 220px;
+    width: 220px;
+    border: 2.0px solid rgb(167, 165, 165);
+
+}
+
+#songDetails{
+
+    font-family: 'Urbanist', sans-serif;
+    /* display: flex; */
+    position: relative;
+    left: 2vh;
+    top: 2.2vh;
+    font-size: 50px;
+    font-weight: bolder;
+    color: #C70000;;
+}
+
+#artistInfo{
+    font-size: 25px;
+    display: flex;
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    /* padding-bottom: 5px; */
+
+}
+
+#songInfo{
+    font-size: 20px;
+    color: #e4e711;
+}
