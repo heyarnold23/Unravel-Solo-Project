@@ -14,14 +14,14 @@ router.get('/:id', asyncHandler(async(req, res) => {
     const song = await Song.findOne(
     {where: {id: req.params.id}}
     );
+    res.json(song)
+}));
 
+router.get('/:id/comments', asyncHandler(async(req, res) => {
     const comments = await Comment.findAll(
     {where: {songId: req.params.id}}
     );
-
-    res.json({song: song, comments: comments})
-
-
-}));
+    res.json(comments)
+}))
 
 module.exports = router;
