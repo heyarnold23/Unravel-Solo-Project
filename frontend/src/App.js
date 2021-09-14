@@ -23,7 +23,7 @@ function App() {
             <LandingPage />
           </Route>
           <Route path='/songs/:id'>
-          <SongPage />
+            <SongPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />

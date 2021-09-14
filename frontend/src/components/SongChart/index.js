@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 import {getSongs} from '../../store/songs';
 
@@ -27,9 +27,9 @@ const SongChart = () => {
                 <ol>
                     {songsArr.map((song) =>
                     // albumUrl, name, artistName
-                    <div className={styles.listedSong}>
+                    <div key={song.id} className={styles.listedSong}>
                         {/* link will eventually be the song page */}
-                        <Link to={`/songs/${song.id}`}>
+                        <NavLink to={`/songs/${song.id}`}>
                             <li className={styles.insideSong} to='/'>
                                 <div className={styles.imgHolder}>
                                     <img src={song.albumUrl} alt={song.albumName} />
@@ -41,7 +41,7 @@ const SongChart = () => {
                                     {song.artistName}
                                 </div>
                             </li>
-                        </Link>
+                        </NavLink>
                     </div>
                     )}
                 </ol>
