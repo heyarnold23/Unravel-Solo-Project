@@ -90,3 +90,9 @@
     width: 40%;
     text-align: left;
 }
+
+#commentDiv{
+    height: auto;
+    width: 60%;
+    background-color: grey;
+}
