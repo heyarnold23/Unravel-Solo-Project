@@ -41,7 +41,7 @@ export const songsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_SONGS:
             const newState = {};
-            action.songs.forEach(song => newState[song.id] = song);
+            action.songs.forEach(song => {newState[song.id] = song});
             return newState;
         case ONE_SONG:
             const oneSong = {...action.song};
