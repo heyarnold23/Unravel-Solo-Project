@@ -31,7 +31,7 @@ export default function Comments(){
                     <ul className={styles.commentUl}>
                         {commentsArr.map((comment) =>
                         <li key={comment.id} className={styles.commentLi}>
-                            <p className={styles.userName}>UserName PLACEHOLDER</p>
+                            <p className={styles.userName}>{comment.User.username}</p>
                             <p className={styles.body}>{comment.body}</p>
                             {/* placeholder for edit and delete buttons */}
                         </li>
