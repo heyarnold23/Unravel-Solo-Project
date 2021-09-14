@@ -1,21 +1,16 @@
-import {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import {getSongPage} from '../../store/songs';
 
 import styles from './SongPage.module.css';
 
 export default function SongPage(){
-    const dispatch = useDispatch();
+
     const {id} = useParams();
-    const song = useSelector(state => state.songs);
+    const songsObject = useSelector(state => state.songs);
+    const song = songsObject[id]
 
-    useEffect(() => {
-        dispatch(getSongPage(id))
-    },[dispatch, id])
-
-    // console.log('songggggg', song);
+    console.log('songPage',song);
 
     return(
         <>
