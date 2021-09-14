@@ -75,16 +75,18 @@
 }
 
 #lyricBodyDiv{
-    display: flex;
-    width: 50%;
+    /* display: block; */
+    width: 60%;
     height: 100%;
-    min-width: 480px;
+    font-size: 20px;
+    white-space: pre-wrap;
+    text-align: left;
+    line-height: 1.75em;
     padding-bottom: 50px;
-
 }
 
 #annotateDiv{
     display: flex;
-    width: 50%;
+    width: 40%;
     text-align: left;
 }
