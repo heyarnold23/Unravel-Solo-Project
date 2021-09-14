@@ -31,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
   Song.associate = function(models) {
       //song has foreign keys on annotations
       //song has foreign keys on comments
+      Song.hasMany(models.Comment, {foreignKey:'songId'})
   };
   return Song;
 };
