@@ -1,6 +1,9 @@
 import {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 import { createComment } from '../../store/comments';
+import Comments from '../Comments';
+
 
 
 
@@ -10,6 +13,7 @@ import styles from './CommentForm.module.css'
 
 export default function CommentForm ({id}){
     const sessionUser = useSelector(state => state.session.user);
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
@@ -21,7 +25,8 @@ export default function CommentForm ({id}){
         setBody('');
     };
 
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const newComment = {
@@ -32,30 +37,42 @@ export default function CommentForm ({id}){
 
         if(body.length > 0 || body.length === 0){
         setErrors([]);
-         const created = dispatch(createComment(newComment));
+         let created = await dispatch(createComment(newComment));
+         console.log('createduser ---------- ',created.user.username);
+         console.log('createduser ---------- ',created);
+
+        //  if (created) {
+        //     history.push(`/songs/${id}`)
+        //  }
+
         //  .catch(async (res) => {
         //         const data = await res.json;
         //         if (data && data.errors) setErrors(data.errors);
         //     });
         }
+
         reset();
     };
 
+
     return (
-        <div id={styles.commentForm}>
-            <form onSubmit={handleSubmit}>
-            <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
-                <textarea
-                    value={body}
-                    onChange={(e) => setBody(e.target.value)}
-                    name="body"
-                    placeholder="Add a comment"
-                ></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <>
+            <div id={styles.commentForm}>
+                <form onSubmit={handleSubmit}>
+                <ul>
+                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+                    <textarea
+                        value={body}
+                        onChange={(e) => setBody(e.target.value)}
+                        name="body"
+                        placeholder="Add a comment"
+                    ></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <Comments />
+        </>
     )
 
 

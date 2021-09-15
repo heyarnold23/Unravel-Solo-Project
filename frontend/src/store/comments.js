@@ -33,7 +33,7 @@ export const createComment = (comment, user) => async (dispatch) => {
     if(response.ok) {
       const newComment = await response.json();
       dispatch(addComment(newComment));
-      console.log('--------- user',newComment);
+      // console.log('--------- user',newComment);
       return (newComment);
     }
 };
