@@ -24,11 +24,11 @@ export const getComments = (id) => async (dispatch) => {
     }
 };
 
-export const createComment = (comment, user) => async (dispatch) => {
+export const createComment = (comment) => async (dispatch) => {
     const response = await csrfFetch (`/api/songs/${comment.songId}/comments`, {
     //   credentials:'include',
       method: 'POST',
-      body: JSON.stringify(comment, user),
+      body: JSON.stringify(comment)
     });
     if(response.ok) {
       const newComment = await response.json();

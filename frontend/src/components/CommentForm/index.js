@@ -38,8 +38,8 @@ export default function CommentForm ({id}){
         if(body.length > 0 || body.length === 0){
         setErrors([]);
          let created = await dispatch(createComment(newComment));
-         console.log('createduser ---------- ',created.user.username);
-         console.log('createduser ---------- ',created);
+         console.log('createduser ---------- ',created.User.username);
+
 
         //  if (created) {
         //     history.push(`/songs/${id}`)

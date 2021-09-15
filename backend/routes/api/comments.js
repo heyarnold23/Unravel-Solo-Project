@@ -9,6 +9,8 @@ const {Comment} = require('../../db/models')
 
 
 // router.put('/')
-// router.delete('/')
+
+router.delete('/')
+
 
 module.exports = router;

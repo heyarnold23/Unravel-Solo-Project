@@ -37,16 +37,17 @@ router.get('/:id/comments', asyncHandler(async(req, res) => {
 
 router.post('/:id/comments', validateComment, asyncHandler(async(req, res) => {
     const {userId, songId, body}=  req.body;
-    const comment = await Comment.create({
+    await Comment.create({
         userId,
         songId,
         body
     });
-    const user = await User.findOne({
-        where: {id: userId}
+    const comment = await Comment.findOne({
+        where: {userId},
+        include: User
     });
 
-    res.json({comment, user})
+    res.json(comment)
 }));
 
 module.exports = router;
