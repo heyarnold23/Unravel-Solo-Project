@@ -32,11 +32,11 @@ export default function CommentForm ({id}){
 
         if(body.length > 0 || body.length === 0){
         setErrors([]);
-         dispatch(createComment(newComment))
-            .catch(async (res) => {
-                const data = await res.json;
-                if (data && data.errors) setErrors(data.errors);
-            });
+         const created = dispatch(createComment(newComment));
+        //  .catch(async (res) => {
+        //         const data = await res.json;
+        //         if (data && data.errors) setErrors(data.errors);
+        //     });
         }
         reset();
     };

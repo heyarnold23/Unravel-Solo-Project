@@ -42,7 +42,11 @@ router.post('/:id/comments', validateComment, asyncHandler(async(req, res) => {
         songId,
         body
     });
-    res.json(comment);
+    const user = await User.findOne({
+        where: {id: userId}
+    });
+
+    res.json({comment, user})
 }));
 
 module.exports = router;

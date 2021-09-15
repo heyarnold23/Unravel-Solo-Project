@@ -24,18 +24,19 @@ export const getComments = (id) => async (dispatch) => {
     }
 };
 
-export const createComment = (commentData) => async (dispatch) => {
-    const response = await csrfFetch (`/api/songs/${commentData.songId}/comments`, {
+export const createComment = (comment, user) => async (dispatch) => {
+    const response = await csrfFetch (`/api/songs/${comment.songId}/comments`, {
     //   credentials:'include',
       method: 'POST',
-      body: JSON.stringify(commentData),
+      body: JSON.stringify(comment, user),
     });
     if(response.ok) {
       const newComment = await response.json();
       dispatch(addComment(newComment));
-      return newComment;
+      console.log('--------- user',newComment);
+      return (newComment);
     }
-  };
+};
 
 const initialState = {};
 // const initialState = { entries: {}, isLoading: true };
