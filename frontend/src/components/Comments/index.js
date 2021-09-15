@@ -17,7 +17,6 @@ export default function Comments(){
     },[dispatch, id])
     const commentsObject = useSelector(state => state.comments)
     const commentsArr = Object.values(commentsObject)
-
     // const comments = commentsObject[id]
     console.log('commeeennttsssss',commentsArr);
     //comments is an object id, userId, songId, body
@@ -34,7 +33,7 @@ export default function Comments(){
                     <ul className={styles.commentUl}>
                         {commentsArr.map((comment) =>
                         <li key={comment.id} className={styles.commentLi}>
-                            <p className={styles.userName}>{comment?.User.username}</p>
+                            <p className={styles.userName}>{comment?.User.username || sessionUser.username}</p>
                             <p className={styles.body}>{comment?.body}</p>
                             {/* placeholder for edit and delete buttons */}
                         </li>
