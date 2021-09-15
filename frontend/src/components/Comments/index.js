@@ -14,6 +14,7 @@ export default function Comments(){
     const commentsArr = Object.values(commentsObject)
 
     useEffect(() => {
+        
         dispatch(getComments(id))
     },[dispatch, id])
 

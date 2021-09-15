@@ -34,7 +34,7 @@ export default function CommentForm ({id}){
         setErrors([]);
         return dispatch(createComment(newComment))
             .catch(async (res) => {
-                const data = await res.json();
+                const data = await res.json;
                 if (data && data.errors) setErrors(data.errors);
             });
         }
