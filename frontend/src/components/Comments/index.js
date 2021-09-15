@@ -10,13 +10,13 @@ export default function Comments(){
     const sessionUser = useSelector(state => state.session.user);
     const {id} = useParams();
     const dispatch = useDispatch();
-    const commentsObject = useSelector(state => state.comments)
-    const commentsArr = Object.values(commentsObject)
 
     useEffect(() => {
-        
+
         dispatch(getComments(id))
     },[dispatch, id])
+    const commentsObject = useSelector(state => state.comments)
+    const commentsArr = Object.values(commentsObject)
 
     // const comments = commentsObject[id]
     console.log('commeeennttsssss',commentsArr);

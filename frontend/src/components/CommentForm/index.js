@@ -32,7 +32,7 @@ export default function CommentForm ({id}){
 
         if(body.length > 0 || body.length === 0){
         setErrors([]);
-        return dispatch(createComment(newComment))
+         dispatch(createComment(newComment))
             .catch(async (res) => {
                 const data = await res.json;
                 if (data && data.errors) setErrors(data.errors);
