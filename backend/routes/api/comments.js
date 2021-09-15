@@ -5,5 +5,10 @@ const asyncHandler = require('express-async-handler');
 
 const {Comment} = require('../../db/models')
 
-router.put('/')
-router.delete('/')
+
+
+
+// router.put('/')
+// router.delete('/')
+
+module.exports = router;

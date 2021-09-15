@@ -1,11 +1,19 @@
+import { csrfFetch } from "./csrf";
+
 //window.store.dispatch(window.commentActions.getComments(id));
 
 const SET_COMMENTS = 'comments/setComments';
+const ADD_COMMENT = 'comments/addComment'
 
 const setComments = (comments) => ({
     type: SET_COMMENTS,
     comments
 });
+
+const addComment = (newComment) => ({
+    type: ADD_COMMENT,
+    newComment
+})
 
 
 export const getComments = (id) => async (dispatch) => {
@@ -16,7 +24,22 @@ export const getComments = (id) => async (dispatch) => {
     }
 };
 
+export const createComment = (commentData) => async (dispatch) => {
+    const response = await csrfFetch (`/api/songs/${commentData.songId}/comments`, {
+    //   credentials:'include',
+      method: 'POST',
+      body: JSON.stringify(commentData),
+    });
+    if(response.ok) {
+      const newComment = await response.json();
+      dispatch(addComment(newComment));
+      return newComment;
+    }
+  };
+
 const initialState = {};
+// const initialState = { entries: {}, isLoading: true };
+
 
 export const commentsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -24,7 +47,13 @@ export const commentsReducer = (state = initialState, action) => {
             const newState = {};
             action.comments.forEach(comment => newState[comment.id] = comment);
             return newState;
+        case ADD_COMMENT:
+            return {
+                ...state,
+                  [action.newComment.id]: action.newComment,
+                };
         default:
             return state;
+
     };
 };
