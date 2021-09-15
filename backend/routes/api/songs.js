@@ -37,13 +37,15 @@ router.get('/:id/comments', asyncHandler(async(req, res) => {
 
 router.post('/:id/comments', validateComment, asyncHandler(async(req, res) => {
     const {userId, songId, body}=  req.body;
-    await Comment.create({
+    const created = await Comment.create({
         userId,
         songId,
         body
     });
-    const comment = await Comment.findOne({
-        where: {userId},
+
+    const {id} = created;
+
+    const comment = await Comment.findByPk(id, {
         include: User
     });
 
