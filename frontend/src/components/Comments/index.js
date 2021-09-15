@@ -7,6 +7,7 @@ import CommentForm from '../CommentForm';
 import styles from './Comments.module.css'
 
 export default function Comments(){
+    const sessionUser = useSelector(state => state.session.user);
     const {id} = useParams();
     const dispatch = useDispatch();
     const commentsObject = useSelector(state => state.comments)
@@ -32,7 +33,7 @@ export default function Comments(){
                     <ul className={styles.commentUl}>
                         {commentsArr.map((comment) =>
                         <li key={comment.id} className={styles.commentLi}>
-                            <p className={styles.userName}>{comment?.User.username}</p>
+                            <p className={styles.userName}>{sessionUser.username}</p>
                             <p className={styles.body}>{comment?.body}</p>
                             {/* placeholder for edit and delete buttons */}
                         </li>
