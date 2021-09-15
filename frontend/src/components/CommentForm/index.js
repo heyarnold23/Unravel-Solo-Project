@@ -14,6 +14,8 @@ export default function CommentForm ({id}){
     const dispatch = useDispatch();
 
     const [body, setBody] = useState('');
+    const [errors, setErrors] = useState([]);
+
 
     const reset = () => {
         setBody('');
@@ -28,13 +30,23 @@ export default function CommentForm ({id}){
         body,
         };
 
-        dispatch(createComment(newComment));
+        if(body.length > 0 || body.length === 0){
+        setErrors([]);
+        return dispatch(createComment(newComment))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setErrors(data.errors);
+            });
+        }
         reset();
     };
 
     return (
         <div id={styles.commentForm}>
             <form onSubmit={handleSubmit}>
+            <ul>
+                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+            </ul>
                 <textarea
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
