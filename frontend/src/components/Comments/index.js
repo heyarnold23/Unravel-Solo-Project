@@ -1,8 +1,11 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import {getComments} from '../../store/comments';
+import { restoreUser } from '../../store/session';
 import CommentForm from '../CommentForm';
+import EditCommentForm from '../EditCommentForm';
+
 
 import styles from './Comments.module.css'
 
@@ -11,18 +14,20 @@ export default function Comments(){
     const {id} = useParams();
     const dispatch = useDispatch();
 
-    useEffect(() => {
 
+
+    useEffect(() => {
     dispatch(getComments(id))
     },[dispatch, id])
 
     const commentsObject = useSelector(state => state.comments)
     const commentsArr = Object.values(commentsObject)
-    // const comments = commentsObject[id]
-    console.log('commeeennttsssss', commentsArr);
-    //comments is an object id, userId, songId, body
 
-    //IMPLEMENT A .FIND TO FIND THE USER NAME
+    console.log('commeeennttsssss', commentsArr);
+
+    if(!sessionUser){
+        return  <h2> placeholder, need to fix</h2>
+      }
 
     return (
         <>
@@ -34,10 +39,12 @@ export default function Comments(){
                     <ul className={styles.commentUl}>
                         {commentsArr.map((comment) =>
                         <li key={comment.id} className={styles.commentLi}>
-                            <p className={styles.userName}>{comment?.User.username || sessionUser.username}</p>
+                            <p className={styles.userName}>{comment?.User.username}</p>
                             {/* <p className={styles.userName}>{comment.username}</p> */}
                             <p className={styles.body}>{comment?.body}</p>
                             {/* placeholder for edit and delete buttons */}
+                            {/* {sessionUser.id === comment.userId ? <button>Edit</button> : 'hello'} */}
+                            {sessionUser.id === comment.userId ? <EditCommentForm comment={comment}/> : 'hello'}
                         </li>
                         )}
                     </ul>

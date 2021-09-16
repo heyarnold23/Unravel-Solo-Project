@@ -4,6 +4,8 @@ import { csrfFetch } from "./csrf";
 
 const SET_COMMENTS = 'comments/setComments';
 const ADD_COMMENT = 'comments/addComment'
+const UPDATE_COMMENT = "items/UPDATE_COMMENT";
+
 
 const setComments = (comments) => ({
     type: SET_COMMENTS,
@@ -14,6 +16,11 @@ const addComment = (newComment) => ({
     type: ADD_COMMENT,
     newComment
 })
+
+const update = (comment) => ({
+    type: UPDATE_COMMENT,
+    comment,
+});
 
 
 export const getComments = (id) => async (dispatch) => {
@@ -38,6 +45,19 @@ export const createComment = (comment) => async (dispatch) => {
     }
 };
 
+export const editComment = (commentData) => async (dispatch) => {
+    const response = await csrfFetch (`/api/comments/${commentData.id}`, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(commentData),
+    });
+    if(response.ok) {
+      const editComment = await response.json();
+      dispatch(update(editComment));
+      return editComment;
+    }
+};
+
 const initialState = {};
 // const initialState = { entries: {}, isLoading: true };
 
@@ -53,6 +73,12 @@ export const commentsReducer = (state = initialState, action) => {
                 ...state,
                   [action.newComment.id]: action.newComment,
                 };
+        case UPDATE_COMMENT: {
+            return {
+                ...state,
+                [action.comment.id]: action.comment,
+            };
+        }
         default:
             return state;
 
