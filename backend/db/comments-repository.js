@@ -15,6 +15,18 @@ async function updateComment(details) {
       }
     );
     return await Comment.findByPk(id);
-  }
+}
 
-  module.exports = {updateComment}
+async function deleteComment(commentId) {
+  const comment = await Comment.findByPk(commentId);
+  if (!comment) throw new Error('Cannot find comment');
+
+  await Comment.destroy({ where: { id: comment.id }});
+  return comment.id;
+}
+
+
+module.exports = {
+  updateComment,
+  deleteComment,
+}

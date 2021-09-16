@@ -24,9 +24,14 @@ router.put(
         })
 
         return res.json(comment);
-    }));
+}));
 
-// router.delete('/')
+router.delete("/:id", asyncHandler(async function (req, res) {
+    const {userId} = req.body;
+    const commentId = await CommentsRepository.deleteComment(req.params.id);
+
+    return res.json( commentId );
+}));
 
 
 module.exports = router;

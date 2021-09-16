@@ -59,7 +59,7 @@ export default function Comments(){
                             <p className={styles.body}>{comment?.body}</p>
                             {/* placeholder for edit and delete buttons */}
                             {/* {sessionUser.id === comment.userId ? <button>Edit</button> : 'hello'} */}
-                            {sessionUser.id === comment.userId ? <EditCommentForm comment={comment}/> : 'hello'}
+                            {sessionUser.id === comment.userId ? <EditCommentForm comment={comment}/> : null}
                         </li>
                         )}
                     </ul>

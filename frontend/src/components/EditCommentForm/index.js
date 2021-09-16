@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { editComment } from '../../store/comments';
 import { useDispatch } from 'react-redux';
+import { deleteComment } from '../../store/comments';
 
 import styles from './EditCommentForm.module.css'
 
@@ -16,17 +17,17 @@ export default function EditCommentForm ({comment}) {
         setShowMenu(true);
     };
 
-    useEffect(() => {
-        if (!showMenu) return;
+    // useEffect(() => {
+    //     if (!showMenu) return;
 
-        const closeMenu = () => {
-          setShowMenu(false);
-        };
+    //     const closeMenu = () => {
+    //       setShowMenu(false);
+    //     };
 
-        document.addEventListener('click', closeMenu);
+    //     document.addEventListener('click', closeMenu);
 
-        return () => document.removeEventListener("click", closeMenu);
-    }, [showMenu]);
+    //     return () => document.removeEventListener("click", closeMenu);
+    // }, [showMenu]);
 
     const [body, setBody] = useState(comment.body);
 
@@ -48,6 +49,17 @@ export default function EditCommentForm ({comment}) {
         }
     };
 
+    const handleDelete = async (e) => {
+        e.preventDefault();
+
+        const commentData = {
+            userId: sessionUser.id,
+            id
+        };
+
+        dispatch(deleteComment(commentData))
+    }
+
     // const handleCancelClick = (e) => {
     //     e.preventDefault();
     //     hideForm();
@@ -55,20 +67,27 @@ export default function EditCommentForm ({comment}) {
 
     return (
         <>
-            <div id={styles.commentForm}>
-                <form onSubmit={handleSubmit}>
-                {/* <ul>
-                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul> */}
-                    <textarea
-                        value={body}
-                        onChange={updateBody}
-                        name="body"
-                        placeholder="Add a comment"
-                    ></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+            <button onClick={openMenu}>edit</button>
+            <button onClick={handleDelete}>delete</button>
+            {showMenu && (
+            <>
+                <div id={styles.commentForm}>
+                    <form onSubmit={handleSubmit}>
+                    {/* <ul>
+                        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                    </ul> */}
+                        <textarea
+                            value={body}
+                            onChange={updateBody}
+                            name="body"
+                            placeholder="Add a comment"
+                        ></textarea>
+                        <button onClick={!openMenu}type="submit">Submit</button>
+                        <button onClick={!openMenu}>cancel</button>
+                    </form>
+                </div>
+            </>
+            )}
         </>
     )
 

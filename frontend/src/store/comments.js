@@ -4,7 +4,9 @@ import { csrfFetch } from "./csrf";
 
 const SET_COMMENTS = 'comments/setComments';
 const ADD_COMMENT = 'comments/addComment'
-const UPDATE_COMMENT = "items/UPDATE_COMMENT";
+// const UPDATE_COMMENT = "items/UPDATE_COMMENT";
+const UPDATE_COMMENT = "comments/update";
+const REMOVE_COMMENT = 'comments/delete';
 
 
 const setComments = (comments) => ({
@@ -20,6 +22,11 @@ const addComment = (newComment) => ({
 const update = (comment) => ({
     type: UPDATE_COMMENT,
     comment,
+});
+
+const removeComment = (commentId) => ({
+    type: REMOVE_COMMENT,
+    commentId,
 });
 
 
@@ -58,6 +65,18 @@ export const editComment = (commentData) => async (dispatch) => {
     }
 };
 
+export const deleteComment = (commentData) => async (dispatch) => {
+    const response = await csrfFetch (`/api/comments/${commentData.id}`, {
+        method: 'DELETE',
+    });
+    if(response.ok) {
+        const deleteComment = await response.json();
+        dispatch(removeComment(deleteComment));
+        console.log(deleteComment);
+        return (deleteComment);
+    }
+};
+
 const initialState = {};
 // const initialState = { entries: {}, isLoading: true };
 
@@ -78,6 +97,11 @@ export const commentsReducer = (state = initialState, action) => {
                 ...state,
                 [action.comment.id]: action.comment,
             };
+        }
+        case REMOVE_COMMENT: {
+            const newState = { ...state };
+            delete newState[action.commentId];
+            return newState;
         }
         default:
             return state;
