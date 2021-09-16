@@ -27,10 +27,10 @@ router.put(
 }));
 
 router.delete("/:id", asyncHandler(async function (req, res) {
-    // const {userId} = req.body;
+    const {userId} = req.body;
     const commentId = await CommentsRepository.deleteComment(req.params.id);
-    console.log(commentId);
-    return res.json({ commentId });
+
+    return res.json( commentId );
 }));
 
 

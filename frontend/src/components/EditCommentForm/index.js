@@ -53,6 +53,7 @@ export default function EditCommentForm ({comment}) {
         e.preventDefault();
 
         const commentData = {
+            userId: sessionUser.id,
             id
         };
 
