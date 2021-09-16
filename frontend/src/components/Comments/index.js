@@ -26,8 +26,23 @@ export default function Comments(){
     console.log('commeeennttsssss', commentsArr);
 
     if(!sessionUser){
-        return  <h2> placeholder, need to fix</h2>
-      }
+        return (
+            <>
+                <div className={styles.commentBox}>
+                    <div className={styles.commentList}>
+                        <ul className={styles.commentUl}>
+                            {commentsArr.map((comment) =>
+                            <li key={comment.id} className={styles.commentLi}>
+                                <p className={styles.userName}>{comment?.User.username}</p>
+                                <p className={styles.body}>{comment?.body}</p>
+                            </li>
+                            )}
+                        </ul>
+                    </div>
+                </div>
+            </>
+        )
+    }
 
     return (
         <>
