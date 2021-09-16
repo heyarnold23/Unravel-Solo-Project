@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { editComment } from '../../store/comments';
 import { useDispatch } from 'react-redux';
+import { deleteComment } from '../../store/comments';
 
 import styles from './EditCommentForm.module.css'
 
@@ -48,6 +49,16 @@ export default function EditCommentForm ({comment}) {
         }
     };
 
+    const handleDelete = async (e) => {
+        e.preventDefault();
+
+        const commentData = {
+            id
+        };
+
+        dispatch(deleteComment(commentData))
+    }
+
     // const handleCancelClick = (e) => {
     //     e.preventDefault();
     //     hideForm();
@@ -56,6 +67,7 @@ export default function EditCommentForm ({comment}) {
     return (
         <>
             <button onClick={openMenu}>edit</button>
+            <button onClick={handleDelete}>delete</button>
             {showMenu && (
             <>
                 <div id={styles.commentForm}>
