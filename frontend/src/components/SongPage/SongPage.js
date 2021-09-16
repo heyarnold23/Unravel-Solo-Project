@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {getSongs} from '../../store/songs';
+import CommentForm from '../CommentForm';
 import Comments from '../Comments';
 
 import styles from './SongPage.module.css';
@@ -50,7 +51,7 @@ export default function SongPage(){
                         {/* <div id={styles.commentDiv}>
                             <p>hello</p>
                         </div> */}
-                        <Comments />
+                        <CommentForm id={id}/>
                     </div>
                     <div id={styles.annotateDiv}>
                         {song?.body}
