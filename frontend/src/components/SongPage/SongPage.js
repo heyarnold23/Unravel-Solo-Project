@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import {getSongs} from '../../store/songs';
 import CommentForm from '../CommentForm';
 import Comments from '../Comments';
+import SongLyrics from '../SongLyrics';
 
 import styles from './SongPage.module.css';
 
@@ -17,6 +18,9 @@ export default function SongPage(){
 
     const songsObject = useSelector(state => state.songs);
     const song = songsObject[id]
+
+    const body = song?.body
+    // console.log('--------- body', body);
 
     // console.log(id)
     // console.log('songPage',song);
@@ -46,7 +50,8 @@ export default function SongPage(){
             <div id={styles.bodyDiv}>
                 <div id={styles.lyricAnnoContainer}>
                     <div id={styles.lyricBodyDiv}>
-                        <p>{song?.body}</p>
+                        {/* <p>{song?.body}</p> */}
+                        <SongLyrics body={body}/>
                         {/* Put below div back on 57 if doesnt work */}
                         {/* <div id={styles.commentDiv}>
                             <p>hello</p>
