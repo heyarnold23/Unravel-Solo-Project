@@ -5,7 +5,7 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const asyncHandler = require('express-async-handler');
 
-const {Song, Comment, User} = require('../../db/models');
+const {Song, Comment, User, Annotation} = require('../../db/models');
 
 // Make custom validator here, refer to users.js
 const validateComment = [
@@ -42,14 +42,19 @@ router.post('/:id/comments', validateComment, asyncHandler(async(req, res) => {
         songId,
         body
     });
-
     const {id} = created;
-
     const comment = await Comment.findByPk(id, {
         include: User
     });
-
     res.json(comment)
 }));
+
+router.get('/:id/annotations', asyncHandler(async(req, res) => {
+    const annotations = await Annotation.findAll(
+        {where: {songId: req.params.id},
+        include: User}
+        );
+    res.json(annotations)
+}))
 
 module.exports = router;
