@@ -1,21 +1,29 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { useParams } from 'react-router-dom';
-import {getSongs} from '../../store/songs';
+import { getAnnotations } from '../../store/annotations';
+
 
 
 export default function SongLyrics({body}){
+    const sessionUser = useSelector(state => state.session.user);
+    const {id} = useParams();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAnnotations(id))
+    },[dispatch, id])
+
+    const annotationsObject = useSelector(state => state.annotations)
+    const annoArr = Object.values(annotationsObject)
+
+    console.log('annoarr -------->>>>>>>',annoArr);
 
     const work = {body}
-
     const arr = Object.values(work)
-
     const string = arr.toString();
-
     // console.log('this is string',string.length);
-
     const split = string.split('')
-
     console.log('this is split', split );
     console.log('this is index', split[12]);
 
