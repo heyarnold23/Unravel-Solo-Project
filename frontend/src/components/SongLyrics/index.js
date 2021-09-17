@@ -105,6 +105,7 @@ export default function SongLyrics({body}){
             let end = chosen.focusNode.parentElement.id
             setStart(start)
             setEnd(end)
+            setAnnoMenu(true)
         }
         // const selStr = window.getSelection().toString()
         // const range = sel.getRangeAt(0).getBoundingClientRect()
@@ -204,7 +205,7 @@ export default function SongLyrics({body}){
             //show annotation component here instead with a div wrapped around it
             <>
                 <div>
-                    <AnnotationPopUp anno={annoIdent} arr={annoArr}/>
+                    <AnnotationPopUp anno={annoIdent} arr={annoArr} start={start} end={end}/>
                     <button onClick={closeMenu}>close</button>
                 </div>
             </>
