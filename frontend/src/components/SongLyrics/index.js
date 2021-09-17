@@ -2,6 +2,8 @@ import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getAnnotations } from '../../store/annotations';
+import {getSongs} from '../../store/songs';
+
 
 import styles from './SongLyrics.module.css'
 
@@ -13,6 +15,7 @@ export default function SongLyrics({body}){
 
     useEffect(() => {
         dispatch(getAnnotations(id));
+        dispatch(getSongs())
     },[dispatch, id])
 
     const annotationsObject = useSelector(state => state.annotations)
@@ -25,16 +28,43 @@ export default function SongLyrics({body}){
     /*******/
 
 
-    // const work = {body}
-    // const arr = Object.values(work)
-    // const string = arr.toString();
-    // // console.log('this is string',string.length);
-    // const split = string.split('')
+    const work = {body}
+    const arr = Object.values(work)
+    const string = arr.toString();
+    // console.log('arr --------- ', arr);
+    // console.log('this is string',string.length);
+    const split = string.split('')
     // console.log('this is split', split );
     // console.log('this is index', split[20]);
-
-
     /** */
+
+    //maybe can do document.createElement span
+    //then put in the innerText or inner html all of the words gathered
+    //then place it at the index of the text start pos
+    //OOORRR can maybe just make a span tag only and insert opening tag
+    // before the startpos and a closing tag at the endPos
+    // const changeElement = (letter) => {
+
+    //const old = document.getElementsByTagName('small'[start])
+
+        // const new = document.createElement('span');
+        // new.innerHTML = e.innerHTML;
+        // e.parentNode.insertBefore(d, e);
+        // e.parentNode.removeChild(e)
+
+    //     // create a new div element
+    //     const newSpan = document.createElement("span");
+
+    //     // and give it some content
+    //     const newContent = document.createTextNode("letter");
+
+    //     // add the text node to the newly created div
+    //     newDiv.appendChild(newContent);
+
+    //     // add the newly created element and its content into the DOM
+    //     const currentDiv = document.getElementById("div1");
+    //     document.body.insertBefore(newDiv, currentDiv);
+    // }
 
     const highlight = () => {
 
@@ -45,7 +75,7 @@ export default function SongLyrics({body}){
         // console.log(selStr);
         // console.log(range);
         const selection = document.getSelection();
-        // const selRange = selection.getRangeAt()
+        console.log('selection ---->',selection);
         const start = selection.anchorOffset;
         const end = selection.focusOffset;
         if (start >= 0 && end >= 0){
@@ -60,19 +90,29 @@ export default function SongLyrics({body}){
 
     /****************/
     /* !!!!! highlighted can index into body and do something !!!!!!! */
-    const highlighted = (start, end) => {
+
+    const highlighted = async (start, end) => {
         //maybe make this an async somehow?
 
         // const experiment = document.getElementsByTagName('span')[start]
 
-        // if (start >= 0 && end >= 0){
+        if (start >= 0 && end >= 0){
         for (let i = start; i <= end; i++) {
-            const element = i;
-            const change = body?.[element];
-            console.log(change);
+            const indexedElement = body?.[i];
+            console.log(indexedElement);
+            const old = document.getElementById(`${i}`);
+            const newest = document.createElement('span');
+            // for (const attr of old?.attributes){
+            //     newest.setAttribute(attr.name, attr.value)
+            // }
+            newest?.setAttribute('id', `${i}`)
+            newest.innerHTML = old?.innerHTML;
+            old?.replaceWith(newest)
             // change.style.backgroundColor = "red";
+            // addElement(change)
         }
-    }
+    }}
+
     //maybe for loop to do effect of adding grey start to end?
     //maybe apply className to give it highlight and click
     // console.log(highlighted(18, 47));
@@ -83,7 +123,6 @@ export default function SongLyrics({body}){
         highlighted(anno.startPos, anno.endPos)
     });
     /****************/
-
 
     /** */
     // proof that we can index into body if we async it
@@ -97,19 +136,27 @@ export default function SongLyrics({body}){
     // const experiment = document.getElementsByTagName('span')[4]
     // console.log('experiment ------> ',experiment);
 
-
-
+console.log('proooooffff',document.getElementById('18'));
+// splice start at startpos, splice to end index, then insert the new element
 
 
     return (
     <>
-        {/* {split.map((s) => <span onMouseUp={highlight}>{s}</span> )} */}
+
+        {/* {annoArr.forEach(anno => {
+        console.log('annoArr and highlighted at work --->>>>');
+        console.log(anno.startPos, anno.endPos);
+        highlighted(anno.startPos, anno.endPos)
+        })} */}
+
 
         {/* {split.map((s) => <span onMouseUp={highlight}>{s}</span> )} */}
         {/* <span onMouseUp={highlight}>{split}</span> */}
 
         {/* best one, line below */}
-        <span onMouseUp={highlight}>{body}</span>
+        {/* <div id={styles.mainTextBody} onMouseUp={highlight}>{body}</div> */}
+        {split.map((s, i=0) => <small id={i++}onMouseUp={highlight}>{s}</small> )}
+
 
 
         {/* <body>
