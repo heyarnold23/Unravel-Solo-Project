@@ -91,6 +91,12 @@ export default function SongLyrics({body}){
     /****************/
     /* !!!!! highlighted can index into body and do something !!!!!!! */
 
+    const test = () => {
+        alert('hi')
+    }
+
+    const color = 'grey';
+
     const highlighted = async (start, end, annoId) => {
         //maybe make this an async somehow?
 
@@ -102,10 +108,9 @@ export default function SongLyrics({body}){
             console.log(indexedElement);
             const old = document.getElementById(`${i}`);
             const newest = document.createElement('span');
-            // for (const attr of old?.attributes){
-            //     newest.setAttribute(attr.name, attr.value)
-            // }
+            newest.style.backgroundColor = color;
             newest?.setAttribute('id', `${annoId}`)
+            newest.addEventListener('click', (test))
             newest.innerHTML = old?.innerHTML;
             old?.replaceWith(newest)
             // change.style.backgroundColor = "red";
@@ -156,7 +161,6 @@ console.log('proooooffff',document.getElementById('18'));
         {/* best one, line below */}
         {/* <div id={styles.mainTextBody} onMouseUp={highlight}>{body}</div> */}
         {split.map((s, i=0) => <small id={i++}onMouseUp={highlight}>{s}</small> )}
-
 
 
         {/* <body>
