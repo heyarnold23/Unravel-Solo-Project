@@ -14,16 +14,28 @@ export default function SongLyrics({body}){
     const dispatch = useDispatch();
     const [annoMenu, setAnnoMenu] = useState(false);
 
-    const openMenu = () => {
-        if (annoMenu) return;
-        setAnnoMenu(true);
+    const openMenu = (evt) => {
+        const annoId = evt.currentTarget.myParam
+        setAnnoMenu(true)
+        console.log('openMenu annoId --->>>', annoId);
+    };
+
+    const closeMenu = () => {
+        setAnnoMenu(false)
     };
 
 
     useEffect(() => {
         dispatch(getAnnotations(id));
         dispatch(getSongs())
-    },[dispatch, id])
+        // if (!annoMenu) return;
+
+        //     const closeMenu = () => {
+        //         setAnnoMenu(false);
+        //     };
+        //     document.addEventListener('click', closeMenu);
+        //     return () => document.removeEventListener("click", closeMenu);
+    },[dispatch, id, annoMenu])
 
     const annotationsObject = useSelector(state => state.annotations)
     const annoArr = Object.values(annotationsObject)
@@ -75,14 +87,12 @@ export default function SongLyrics({body}){
 
     const highlight = () => {
 
-        // const sel = window.getSelection()
-        // const selStr = window.getSelection.toString()
+        const selStr = window.getSelection().toString()
         // const range = sel.getRangeAt(0).getBoundingClientRect()
-        // console.log(sel);
-        // console.log(selStr);
+        // console.log('selsttrrrrrtrtrtrr',selStr);
         // console.log(range);
         const selection = document.getSelection();
-        console.log('selection ---->',selection);
+        // console.log('selection ---->',selection);
         const start = selection.anchorOffset;
         const end = selection.focusOffset;
         if (start >= 0 && end >= 0){
@@ -112,8 +122,8 @@ export default function SongLyrics({body}){
 
         if (start >= 0 && end >= 0){
         for (let i = start; i <= end; i++) {
-            const indexedElement = body?.[i];
-            console.log(indexedElement);
+            // const indexedElement = body?.[i];
+            // console.log(indexedElement);
             const old = document.getElementById(`${i}`);
             const newest = document.createElement('span');
             newest.style.backgroundColor = color;
@@ -130,8 +140,8 @@ export default function SongLyrics({body}){
     // console.log(highlighted(18, 47));
     // console.log('this is the map we want',annoArr.forEach((anno) => ))
     annoArr.forEach(anno => {
-        console.log('annoArr and highlighted at work --->>>>');
-        console.log(anno.startPos, anno.endPos);
+        // console.log('annoArr and highlighted at work --->>>>');
+        // console.log(anno.startPos, anno.endPos);
         highlighted(anno.startPos, anno.endPos, anno.id)
     });
     /****************/
@@ -148,7 +158,7 @@ export default function SongLyrics({body}){
     // const experiment = document.getElementsByTagName('span')[4]
     // console.log('experiment ------> ',experiment);
 
-console.log('proooooffff',document.getElementById('18'));
+// console.log('proooooffff',document.getElementById('18'));
 // splice start at startpos, splice to end index, then insert the new element
 
 
@@ -169,15 +179,18 @@ console.log('proooooffff',document.getElementById('18'));
         {/* <div id={styles.mainTextBody} onMouseUp={highlight}>{body}</div> */}
         {split.map((s, i=0) => <small id={i++}onMouseUp={highlight}>{s}</small> )}
 
-        <div>
+        {/* <div onClick={openMenu}>Hello</div> */}
         {annoMenu && (
+
+            //show annotation component here instead with a div wrapped around it
             <>
-                <div id={styles.commentForm}>
+                <div>
                     <p>annomenu</p>
+                    <button onClick={closeMenu}>close</button>
                 </div>
             </>
             )}
-        </div>
+
 
     </>
     )
