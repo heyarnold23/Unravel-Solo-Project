@@ -91,8 +91,9 @@ export default function SongLyrics({body}){
     /****************/
     /* !!!!! highlighted can index into body and do something !!!!!!! */
 
-    const test = () => {
-        alert('hi')
+    const test = (evt) => {
+        const annoId = evt.currentTarget.myParam
+        alert(`hi, ${annoId}`)
     }
 
     const color = 'grey';
@@ -110,11 +111,10 @@ export default function SongLyrics({body}){
             const newest = document.createElement('span');
             newest.style.backgroundColor = color;
             newest?.setAttribute('id', `${annoId}`)
-            newest.addEventListener('click', (test))
+            newest.myParam = annoId
+            newest.addEventListener('click', test)
             newest.innerHTML = old?.innerHTML;
             old?.replaceWith(newest)
-            // change.style.backgroundColor = "red";
-            // addElement(change)
         }
     }}
 
