@@ -190,7 +190,7 @@ export default function SongLyrics({body}){
             //show annotation component here instead with a div wrapped around it
             <>
                 <div>
-                    <AnnotationPopUp anno={annoIdent}/>
+                    <AnnotationPopUp anno={annoIdent} arr={annoArr}/>
                     <button onClick={closeMenu}>close</button>
                 </div>
             </>
