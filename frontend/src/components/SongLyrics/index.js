@@ -127,7 +127,7 @@ export default function SongLyrics({body}){
             const old = document.getElementById(`${i}`);
             const newest = document.createElement('span');
             newest.style.backgroundColor = color;
-            newest?.setAttribute('id', `${annoId}`)
+            newest?.setAttribute('id', `annoId: ${annoId}`)
             newest.myParam = annoId
             newest.addEventListener('click', openMenu)
             newest.innerHTML = old?.innerHTML;
