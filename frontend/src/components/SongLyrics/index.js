@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getAnnotations } from '../../store/annotations';
 import {getSongs} from '../../store/songs';
+import AnnotationPopUp from '../AnnotationPopUp'
 
 
 import styles from './SongLyrics.module.css'
@@ -13,12 +14,16 @@ export default function SongLyrics({body}){
     const {id} = useParams();
     const dispatch = useDispatch();
     const [annoMenu, setAnnoMenu] = useState(false);
+    const [annoIdent, setAnnoIdent] = useState(null)
 
     const openMenu = (evt) => {
         const annoId = evt.currentTarget.myParam
         setAnnoMenu(true)
+        setAnnoIdent(annoId)
         console.log('openMenu annoId --->>>', annoId);
     };
+
+    console.log('annoIDENNNNNTNNTNT', annoIdent);
 
     const closeMenu = () => {
         setAnnoMenu(false)
@@ -185,7 +190,7 @@ export default function SongLyrics({body}){
             //show annotation component here instead with a div wrapped around it
             <>
                 <div>
-                    <p>annomenu</p>
+                    <AnnotationPopUp anno={annoIdent}/>
                     <button onClick={closeMenu}>close</button>
                 </div>
             </>
