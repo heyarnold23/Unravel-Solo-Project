@@ -91,7 +91,7 @@ export default function SongLyrics({body}){
     /****************/
     /* !!!!! highlighted can index into body and do something !!!!!!! */
 
-    const highlighted = async (start, end) => {
+    const highlighted = async (start, end, annoId) => {
         //maybe make this an async somehow?
 
         // const experiment = document.getElementsByTagName('span')[start]
@@ -105,7 +105,7 @@ export default function SongLyrics({body}){
             // for (const attr of old?.attributes){
             //     newest.setAttribute(attr.name, attr.value)
             // }
-            newest?.setAttribute('id', `${i}`)
+            newest?.setAttribute('id', `${annoId}`)
             newest.innerHTML = old?.innerHTML;
             old?.replaceWith(newest)
             // change.style.backgroundColor = "red";
@@ -120,7 +120,7 @@ export default function SongLyrics({body}){
     annoArr.forEach(anno => {
         console.log('annoArr and highlighted at work --->>>>');
         console.log(anno.startPos, anno.endPos);
-        highlighted(anno.startPos, anno.endPos)
+        highlighted(anno.startPos, anno.endPos, anno.id)
     });
     /****************/
 
