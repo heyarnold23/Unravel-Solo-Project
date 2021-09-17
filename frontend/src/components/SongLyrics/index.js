@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getAnnotations } from '../../store/annotations';
@@ -12,6 +12,13 @@ export default function SongLyrics({body}){
     const sessionUser = useSelector(state => state.session.user);
     const {id} = useParams();
     const dispatch = useDispatch();
+    const [annoMenu, setAnnoMenu] = useState(false);
+
+    const openMenu = () => {
+        if (annoMenu) return;
+        setAnnoMenu(true);
+    };
+
 
     useEffect(() => {
         dispatch(getAnnotations(id));
@@ -112,7 +119,7 @@ export default function SongLyrics({body}){
             newest.style.backgroundColor = color;
             newest?.setAttribute('id', `${annoId}`)
             newest.myParam = annoId
-            newest.addEventListener('click', test)
+            newest.addEventListener('click', openMenu)
             newest.innerHTML = old?.innerHTML;
             old?.replaceWith(newest)
         }
@@ -162,19 +169,16 @@ console.log('proooooffff',document.getElementById('18'));
         {/* <div id={styles.mainTextBody} onMouseUp={highlight}>{body}</div> */}
         {split.map((s, i=0) => <small id={i++}onMouseUp={highlight}>{s}</small> )}
 
+        <div>
+        {annoMenu && (
+            <>
+                <div id={styles.commentForm}>
+                    <p>annomenu</p>
+                </div>
+            </>
+            )}
+        </div>
 
-        {/* <body>
-            <span>
-                {body}
-            </span>
-
-        </body> */}
-
-
-            {/* maybe on each span, have an onclick or other event handler
-            that will equal to a function above that has window.getSelection()
-            underneath it
-            */}
     </>
     )
 }
