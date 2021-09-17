@@ -30,6 +30,10 @@ export default function AnnotationPopUp({anno, arr}){
     */
 
     return (
-        <h2>{foundObj?.body}</h2>
+    <>
+        <div>Annotation from</div>
+        <div>{foundObj?.User.username}</div>
+        <div>{foundObj?.body}</div>
+    </>
     )
 }
