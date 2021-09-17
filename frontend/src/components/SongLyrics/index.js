@@ -118,7 +118,7 @@ export default function SongLyrics({body}){
         alert(`hi, ${annoId}`)
     }
 
-    const color = 'grey';
+    const color = `#E9E9E9`;
 
     const highlighted = async (start, end, annoId) => {
         //maybe make this an async somehow?
