@@ -57,4 +57,20 @@ router.get('/:id/annotations', asyncHandler(async(req, res) => {
     res.json(annotations)
 }))
 
+router.post('/:id/annotations', asyncHandler(async(req, res) => {
+    const {userId, songId, body, startPos, endPos}=  req.body;
+    const created = await Annotation.create({
+        userId,
+        songId,
+        body,
+        startPos,
+        endPos
+    });
+    const {id} = created;
+    const annotation = await Annotation.findByPk(id, {
+        include: User
+    });
+    res.json(annotation)
+}));
+
 module.exports = router;

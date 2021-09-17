@@ -1,7 +1,7 @@
-// import { csrfFetch } from "./csrf";
+import { csrfFetch } from "./csrf";
 
 const SET_ANNOTATIONS = 'comments/setAnnotations';
-// const ADD_COMMENT = 'comments/addComment'
+const ADD_ANNOTATION = 'comments/addAnnotation'
 // const UPDATE_COMMENT = "comments/update";
 // const REMOVE_COMMENT = 'comments/delete';
 
@@ -10,10 +10,10 @@ const setAnnotations = (annotations) => ({
     annotations
 });
 
-// const addComment = (newComment) => ({
-//     type: ADD_COMMENT,
-//     newComment
-// })
+const addAnnotation = (newAnno) => ({
+    type: ADD_ANNOTATION,
+    newAnno
+});
 
 // const update = (comment) => ({
 //     type: UPDATE_COMMENT,
@@ -34,19 +34,19 @@ export const getAnnotations = (id) => async (dispatch) => {
     }
 };
 
-// export const createComment = (comment) => async (dispatch) => {
-//     const response = await csrfFetch (`/api/songs/${comment.songId}/comments`, {
-//     //   credentials:'include',
-//       method: 'POST',
-//       body: JSON.stringify(comment)
-//     });
-//     if(response.ok) {
-//       const newComment = await response.json();
-//       dispatch(addComment(newComment));
-//       // console.log('--------- user',newComment);
-//       return (newComment);
-//     }
-// };
+export const createComment = (annotation) => async (dispatch) => {
+    const response = await csrfFetch (`/api/songs/${annotation.songId}/annotations`, {
+    //   credentials:'include',
+      method: 'POST',
+      body: JSON.stringify(annotation)
+    });
+    if(response.ok) {
+      const newAnno = await response.json();
+      dispatch(addAnnotation(newAnno));
+      // console.log('--------- user',newComment);
+      return (newAnno);
+    }
+};
 
 // export const editComment = (commentData) => async (dispatch) => {
 //     const response = await csrfFetch (`/api/comments/${commentData.id}`, {
@@ -81,11 +81,11 @@ export const annotationsReducer = (state = initialState, action) => {
             const newState = {};
             action.annotations.forEach(annotation => newState[annotation.id] = annotation);
             return newState;
-        // case ADD_COMMENT:
-        //     return {
-        //         ...state,
-        //           [action.newComment.id]: action.newComment,
-        //         };
+        case ADD_ANNOTATION:
+            return {
+                ...state,
+                  [action.newAnno.id]: action.newAnno,
+                };
         // case UPDATE_COMMENT: {
         //     return {
         //         ...state,
