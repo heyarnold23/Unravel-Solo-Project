@@ -5,7 +5,7 @@
 // import {getSongs} from '../../store/songs';
 
 
-export default function AnnotationPopUp({anno, arr}){
+export default function AnnotationPopUp({anno, arr, start, end}){
     // const sessionUser = useSelector(state => state.session.user);
     // const {id} = useParams();
     // const dispatch = useDispatch();
@@ -15,19 +15,21 @@ export default function AnnotationPopUp({anno, arr}){
     //     dispatch(getSongs())
     // },[dispatch, id])
 
-    console.log('inside annotationPopUp', arr);
-    console.log('annonoooooo', anno);
+    console.log('arr inside annotationPopUp', arr);
+    console.log('anno inside annotationPopUp', anno);
     const foundObj = arr.find(object => object.id === anno)
-    console.log('found!!!!!!!', foundObj);
+    console.log('found!!!!!!! inside annotationPopUp', foundObj);
+    console.log('pop up start!!!!!! inside annotationPopUp', start);
 
-    /*
+
         if(!anno){
-        return
-    }
+         console.log('hello inside annotationPopUp')
+        }
+        /*
         saving above for when working on highlighting
         the return will either be a form to submit an annotation or
         just render the component holding the form if wanna make it separate
-    */
+        */
 
     return (
     <>

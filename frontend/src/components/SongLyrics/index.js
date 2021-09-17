@@ -96,6 +96,9 @@ export default function SongLyrics({body}){
     const highlight = () => {
 
         if (window.getSelection) {
+            setAnnoIdent(null);
+            // setAnnoMenu(false)
+
             let chosen = window.getSelection();
             console.log('CHOSEN ---->>', chosen);
             // console.log('AnchorParentEle---->>', chosen.anchorNode.parentElement.id);
