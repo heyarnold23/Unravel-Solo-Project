@@ -14,7 +14,10 @@ export default function SongLyrics({body}){
     const {id} = useParams();
     const dispatch = useDispatch();
     const [annoMenu, setAnnoMenu] = useState(false);
-    const [annoIdent, setAnnoIdent] = useState(null)
+    const [annoIdent, setAnnoIdent] = useState(null);
+    const [start, setStart] = useState(null);
+    const [end, setEnd] = useState(null)
+
 
     const openMenu = (evt) => {
         const annoId = evt.currentTarget.myParam
@@ -92,24 +95,35 @@ export default function SongLyrics({body}){
 
     const highlight = () => {
 
-        const selStr = window.getSelection().toString()
+        if (window.getSelection) {
+            let chosen = window.getSelection();
+            console.log('CHOSEN ---->>', chosen);
+            // console.log('AnchorParentEle---->>', chosen.anchorNode.parentElement.id);
+            // console.log('FocusParentEle---->>', chosen.focusNode.parentElement.id);
+            // make sure to set a use state up above later
+            let start = chosen.anchorNode.parentElement.id;
+            let end = chosen.focusNode.parentElement.id
+            setStart(start)
+            setEnd(end)
+        }
+        // const selStr = window.getSelection().toString()
         // const range = sel.getRangeAt(0).getBoundingClientRect()
         // console.log('selsttrrrrrtrtrtrr',selStr);
         // console.log(range);
-        const selection = document.getSelection();
+        // const selection = document.getSelection();
         // console.log('selection ---->',selection);
-        const start = selection.anchorOffset;
-        const end = selection.focusOffset;
-        if (start >= 0 && end >= 0){
-    	    console.log("start: " + start);
-    	    console.log("end: " + end);
-            // console.log('selRange: ' + selRange);
-        }
+        // const start = selection.anchorOffset;
+        // const end = selection.focusOffset;
+        // if (start >= 0 && end >= 0){
+    	//     console.log("start: " + start);
+    	//     console.log("end: " + end);
+        // }
         //also maybe can do something with useState and controlledInput and onChange or mouseUp
         //maybe can run highlighted function from below
 
     }
-
+    console.log('start -------', start);
+    console.log('end -------', end);
     /****************/
     /* !!!!! highlighted can index into body and do something !!!!!!! */
 
