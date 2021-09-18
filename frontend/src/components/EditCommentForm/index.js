@@ -17,6 +17,12 @@ export default function EditCommentForm ({comment}) {
         setShowMenu(true);
     };
 
+    const closeMenu = (e) => {
+        e.preventDefault()
+        setShowMenu(false)
+        setBody(comment.body)
+    }
+
     // useEffect(() => {
     //     if (!showMenu) return;
 
@@ -83,7 +89,7 @@ export default function EditCommentForm ({comment}) {
                             placeholder="Add a comment"
                         ></textarea>
                         <button onClick={!openMenu}type="submit">Submit</button>
-                        <button onClick={!openMenu}>cancel</button>
+                        <button onClick={closeMenu}>cancel</button>
                     </form>
                 </div>
             </>
