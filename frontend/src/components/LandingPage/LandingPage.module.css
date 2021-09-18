@@ -1,0 +1,33 @@
+.panelsContainer{
+    display: flex;
+    height: 500px;
+    width: 100%;
+    /* position: relative;
+    right: 8px;
+    bottom: 8px; */
+    justify-content: center;
+    align-items: center;
+    /* background-color: #7a0505; */
+    /* background-color: #9A9A9A; */
+    background-color: black;
+}
+
+.panel {
+    width: 17%;
+    height: 90%;
+    background-position: center;
+    /* border-radius: 10px; */
+    padding: 5px 5px 5px 5px;
+    margin: 5px 1% 5px 1%;
+    /* float: left; */
+    /* position: relative; */
+    transition: width 1000ms;
+    text-align: center;
+    overflow: hidden;
+}
+
+.panel:hover{
+    width:100%;
+    /* transform:scale(1.05); */
+
+}
