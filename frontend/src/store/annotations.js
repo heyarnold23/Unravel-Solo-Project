@@ -34,7 +34,7 @@ export const getAnnotations = (id) => async (dispatch) => {
     }
 };
 
-export const createComment = (annotation) => async (dispatch) => {
+export const createAnnotation = (annotation) => async (dispatch) => {
     const response = await csrfFetch (`/api/songs/${annotation.songId}/annotations`, {
     //   credentials:'include',
       method: 'POST',

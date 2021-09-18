@@ -3,6 +3,7 @@
 // import { useParams } from 'react-router-dom';
 // import { getAnnotations } from '../../store/annotations';
 // import {getSongs} from '../../store/songs';
+import AnnotationForm from '../AnnotationForm'
 
 
 export default function AnnotationPopUp({anno, arr, start, end}){
@@ -22,9 +23,11 @@ export default function AnnotationPopUp({anno, arr, start, end}){
     console.log('pop up start!!!!!! inside annotationPopUp', start);
 
 
-        if(!anno){
-         console.log('hello inside annotationPopUp')
-        }
+    if(!anno){
+        return (
+            <AnnotationForm start={start} end={end}/>
+        )
+    }
         /*
         saving above for when working on highlighting
         the return will either be a form to submit an annotation or
