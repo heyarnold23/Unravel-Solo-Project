@@ -14,8 +14,6 @@ router.put(
     '/:id',
     /* put validation here later*/
     asyncHandler(async (req, res) => {
-        const {userId} = req.body;
-        console.log(userId);
         const created = await CommentsRepository.updateComment(req.body);
         const {id} = created;
 

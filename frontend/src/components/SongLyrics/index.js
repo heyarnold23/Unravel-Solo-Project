@@ -22,10 +22,8 @@ export default function SongLyrics({body}){
         const annoId = evt.currentTarget.myParam
         setAnnoMenu(true)
         setAnnoIdent(annoId)
-        console.log('openMenu annoId --->>>', annoId);
     };
 
-    console.log('annoIDENNNNNTNNTNT', annoIdent);
 
     const closeMenu = () => {
         setAnnoMenu(false)
@@ -51,7 +49,6 @@ export default function SongLyrics({body}){
             setAnnoIdent(null);
 
             let chosen = window.getSelection();
-            console.log('CHOSEN ---->>', chosen);
             let start = chosen.anchorNode.parentElement.id;
             let end = chosen.focusNode.parentElement.id
             setStart(start)

@@ -43,7 +43,6 @@ export const createAnnotation = (annotation) => async (dispatch) => {
     if(response.ok) {
       const newAnno = await response.json();
       dispatch(addAnnotation(newAnno));
-      // console.log('--------- user',newComment);
       return (newAnno);
     }
 };
@@ -68,7 +67,6 @@ export const createAnnotation = (annotation) => async (dispatch) => {
 //     if(response.ok) {
 //         const deleteComment = await response.json();
 //         dispatch(removeComment(deleteComment));
-//         console.log(deleteComment);
 //         return (deleteComment);
 //     }
 // };

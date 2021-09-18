@@ -47,7 +47,6 @@ export default function AnnotationForm({start, end}){
     };
 
 
-    // console.log('inside anno FORRMM', start);
     if (!sessionUser) {
         return (
             <>

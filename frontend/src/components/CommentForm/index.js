@@ -35,8 +35,8 @@ export default function CommentForm ({id}){
 
         if(body.length > 0 || body.length === 0){
         setErrors([]);
-         let created = await dispatch(createComment(newComment));
-         console.log('createduser ---------- ',created.User.username);
+        dispatch(createComment(newComment));
+
 
 
         //  if (created) {

@@ -23,8 +23,6 @@ export default function Comments(){
     const commentsObject = useSelector(state => state.comments)
     const commentsArr = Object.values(commentsObject)
 
-    console.log('commeeennttsssss', commentsArr);
-
     if(!sessionUser){
         return (
             <>

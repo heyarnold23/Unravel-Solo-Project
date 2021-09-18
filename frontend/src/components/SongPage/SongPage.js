@@ -20,10 +20,7 @@ export default function SongPage(){
     const song = songsObject[id]
 
     const body = song?.body
-    // console.log('--------- body', body);
-
-    // console.log(id)
-    // console.log('songPage',song);
+ 
 
     return(
         <>

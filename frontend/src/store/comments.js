@@ -47,7 +47,6 @@ export const createComment = (comment) => async (dispatch) => {
     if(response.ok) {
       const newComment = await response.json();
       dispatch(addComment(newComment));
-      // console.log('--------- user',newComment);
       return (newComment);
     }
 };
@@ -72,7 +71,6 @@ export const deleteComment = (commentData) => async (dispatch) => {
     if(response.ok) {
         const deleteComment = await response.json();
         dispatch(removeComment(deleteComment));
-        console.log(deleteComment);
         return (deleteComment);
     }
 };

@@ -16,11 +16,8 @@ export default function AnnotationPopUp({anno, arr, start, end}){
     //     dispatch(getSongs())
     // },[dispatch, id])
 
-    console.log('arr inside annotationPopUp', arr);
-    console.log('anno inside annotationPopUp', anno);
     const foundObj = arr.find(object => object.id === anno)
-    console.log('found!!!!!!! inside annotationPopUp', foundObj);
-    console.log('pop up start!!!!!! inside annotationPopUp', start);
+
 
 
     if(!anno){

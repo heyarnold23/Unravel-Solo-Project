@@ -15,7 +15,6 @@ const SongChart = () => {
         dispatch(getSongs());
     }, [dispatch])
 
-    // console.log(songsArr);
 
     return (
         <div className={styles.songChart}>
