@@ -10,6 +10,7 @@ import { restoreCSRF, csrfFetch } from './store/csrf';
 import * as sessionActions from './store/session';
 import * as songActions from './store/songs';
 import * as commentActions from './store/comments'
+import * as annotationActions from './store/annotations'
 
 const store = configureStore();
 
@@ -20,7 +21,8 @@ if (process.env.NODE_ENV !== "production") {
   window.store = store;
   window.sessionActions = sessionActions;
   window.songActions = songActions;
-  window.commentActions = commentActions
+  window.commentActions = commentActions;
+  window.annotationActions = annotationActions
 }
 
 function Root() {

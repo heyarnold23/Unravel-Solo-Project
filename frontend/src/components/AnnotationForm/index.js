@@ -1,42 +1,36 @@
 import {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createComment } from '../../store/comments';
-import Comments from '../Comments';
+import {createAnnotation} from '../../store/annotations'
+import { useParams } from 'react-router-dom';
 
 
-
-
-import styles from './CommentForm.module.css'
-
-
-
-export default function CommentForm ({id}){
+export default function AnnotationForm({start, end}){
     const sessionUser = useSelector(state => state.session.user);
-
+    const {id} = useParams()
     const dispatch = useDispatch();
+
 
     const [body, setBody] = useState('');
     const [errors, setErrors] = useState([]);
 
-
-    const reset = () => {
-        setBody('');
-    };
-
+    // const reset = () => {
+    //     setBody('');
+    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const newComment = {
+        const newAnno = {
         userId: sessionUser.id,
         songId: id,
         body,
+        startPos: start,
+        endPos: end,
         };
 
         if(body.length > 0 || body.length === 0){
         setErrors([]);
-        dispatch(createComment(newComment));
-
+        dispatch(createAnnotation(newAnno));
 
 
         //  if (created) {
@@ -49,37 +43,37 @@ export default function CommentForm ({id}){
         //     });
         }
 
-        reset();
+        // reset();
     };
+
 
     if (!sessionUser) {
         return (
             <>
-                <div id={styles.commentForm}>
-                    <span>Sign in to comment</span>
+                <div>
+                    <span>Sign in to annotate</span>
                 </div>
-                <Comments />
             </>
         )
     }
 
-    return (
+
+    return(
         <>
-            <div id={styles.commentForm}>
+            <div>
                 <form onSubmit={handleSubmit}>
-                <ul>
+                {/* <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul>
+                </ul> */}
                     <textarea
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
                         name="body"
-                        placeholder="Add a comment"
+                        placeholder="Add an annotation"
                     ></textarea>
                     <button type="submit">Submit</button>
                 </form>
             </div>
-            <Comments />
         </>
     )
 

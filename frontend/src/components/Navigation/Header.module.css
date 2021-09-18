@@ -1,7 +1,7 @@
 .header{
     display: flex;
     height: 38px;
-    width: 102%;
+    width: 100%;
     background: black;
     /* position: relative;
     right: 8px;
@@ -15,6 +15,4 @@
     font-family: 'Urbanist', sans-serif;
     text-decoration: none;
     color: white;
-    position: relative;
-    right: 20px;
 }
