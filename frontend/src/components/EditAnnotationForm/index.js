@@ -80,9 +80,9 @@ export default function EditAnnotationForm ({annotation}) {
                             value={body}
                             onChange={updateBody}
                             name="body"
-                            placeholder="Add an annotation"
+                            placeholder="Edit an annotation"
                         ></textarea>
-                        <button onClick={openMenu}type="submit">Submit</button>
+                        <button onClick={!openMenu}type="submit">Submit</button>
                         <button onClick={!openMenu}>cancel</button>
                     </form>
                 </div>
