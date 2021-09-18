@@ -1,9 +1,9 @@
 import { csrfFetch } from "./csrf";
 
-const SET_ANNOTATIONS = 'comments/setAnnotations';
-const ADD_ANNOTATION = 'comments/addAnnotation'
-// const UPDATE_COMMENT = "comments/update";
-// const REMOVE_COMMENT = 'comments/delete';
+const SET_ANNOTATIONS = 'annotations/setAnnotations';
+const ADD_ANNOTATION = 'annotations/addAnnotation'
+const UPDATE_ANNOTATION = "annotations/update";
+const REMOVE_ANNOTATION = 'annotations/delete';
 
 const setAnnotations = (annotations) => ({
     type: SET_ANNOTATIONS,
@@ -15,15 +15,15 @@ const addAnnotation = (newAnno) => ({
     newAnno
 });
 
-// const update = (comment) => ({
-//     type: UPDATE_COMMENT,
-//     comment,
-// });
+const update = (annotation) => ({
+    type: UPDATE_ANNOTATION,
+    annotation,
+});
 
-// const removeComment = (commentId) => ({
-//     type: REMOVE_COMMENT,
-//     commentId,
-// });
+const removeAnnotation = (annotationId) => ({
+    type: REMOVE_ANNOTATION,
+    annotationId,
+});
 
 
 export const getAnnotations = (id) => async (dispatch) => {
@@ -47,29 +47,29 @@ export const createAnnotation = (annotation) => async (dispatch) => {
     }
 };
 
-// export const editComment = (commentData) => async (dispatch) => {
-//     const response = await csrfFetch (`/api/comments/${commentData.id}`, {
-//       method: 'PUT',
-//       headers: {'Content-Type': 'application/json'},
-//       body: JSON.stringify(commentData),
-//     });
-//     if(response.ok) {
-//       const editComment = await response.json();
-//       dispatch(update(editComment));
-//       return editComment;
-//     }
-// };
+export const editAnnotation = (annotationData) => async (dispatch) => {
+    const response = await csrfFetch (`/api/annotations/${annotationData.id}`, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(annotationData),
+    });
+    if(response.ok) {
+      const editAnno = await response.json();
+      dispatch(update(editAnno));
+      return editAnno;
+    }
+};
 
-// export const deleteComment = (commentData) => async (dispatch) => {
-//     const response = await csrfFetch (`/api/comments/${commentData.id}`, {
-//         method: 'DELETE',
-//     });
-//     if(response.ok) {
-//         const deleteComment = await response.json();
-//         dispatch(removeComment(deleteComment));
-//         return (deleteComment);
-//     }
-// };
+export const deleteAnnotation = (annotationData) => async (dispatch) => {
+    const response = await csrfFetch (`/api/annotations/${annotationData.id}`, {
+        method: 'DELETE',
+    });
+    if(response.ok) {
+        const deleteAnnotation = await response.json();
+        dispatch(removeAnnotation(deleteAnnotation));
+        return (deleteAnnotation);
+    }
+};
 
 const initialState = {};
 
@@ -84,19 +84,18 @@ export const annotationsReducer = (state = initialState, action) => {
                 ...state,
                   [action.newAnno.id]: action.newAnno,
                 };
-        // case UPDATE_COMMENT: {
-        //     return {
-        //         ...state,
-        //         [action.comment.id]: action.comment,
-        //     };
-        // }
-        // case REMOVE_COMMENT: {
-        //     const newState = { ...state };
-        //     delete newState[action.commentId];
-        //     return newState;
-        // }
+        case UPDATE_ANNOTATION: {
+            return {
+                ...state,
+                [action.annotation.id]: action.annotation,
+            };
+        }
+        case REMOVE_ANNOTATION: {
+            const newState = { ...state };
+            delete newState[action.annotationId];
+            return newState;
+        }
         default:
             return state;
-
     };
 };
