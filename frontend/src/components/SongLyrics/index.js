@@ -143,6 +143,21 @@ export default function SongLyrics({body}){
 
         // const experiment = document.getElementsByTagName('span')[start]
 
+        if (start > end) {
+            for (let i = start; i >= end; i--) {
+                // const indexedElement = body?.[i];
+                // console.log(indexedElement);
+                const old = document.getElementById(`${i}`);
+                const newest = document.createElement('span');
+                newest.style.backgroundColor = color;
+                newest?.setAttribute('id', `annoId: ${annoId}`)
+                newest.myParam = annoId
+                newest.addEventListener('click', openMenu)
+                newest.innerHTML = old?.innerHTML;
+                old?.replaceWith(newest)
+            }
+        }
+
         if (start >= 0 && end >= 0){
         for (let i = start; i <= end; i++) {
             // const indexedElement = body?.[i];
