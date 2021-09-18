@@ -73,8 +73,7 @@ export default function EditAnnotationForm ({annotation}) {
 
     return (
         <>
-            <button onClick={openMenu}>edit</button>
-            <button onClick={handleDelete}>delete</button>
+
             {showMenu && (
             <>
                 <div>
@@ -94,6 +93,8 @@ export default function EditAnnotationForm ({annotation}) {
                 </div>
             </>
             )}
+            <button onClick={openMenu}>edit</button>
+            <button onClick={handleDelete}>delete</button>
         </>
     )
 
