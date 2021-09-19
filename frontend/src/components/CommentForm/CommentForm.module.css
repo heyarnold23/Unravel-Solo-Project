@@ -7,4 +7,28 @@
     padding-right: 18px;
     /* border-top-left-radius: 10px;
     border-top-right-radius: 10px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.commentInput{
+    font-family: 'Urbanist', sans-serif;
+    width: 100%;
+    resize: none;
+    border: 2px solid rgb(168, 165, 165);
+}
+
+.submit{
+    font-family: 'Urbanist', sans-serif;
+    background-color: transparent;
+    border-color: #C70000;
+    color: #C70000;
+    transition: background-color 200ms;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.submit:hover{
+    background-color: #dbb9b9;
 }
