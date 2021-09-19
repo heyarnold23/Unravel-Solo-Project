@@ -1,0 +1,35 @@
+.main{
+    display: flex;
+    margin-top: 5vh;
+    height: 350px;
+    color: white;
+    background-color: black;
+    justify-content: space-evenly;
+    padding-top: 8vh;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.mainText{
+    width: 30%;
+    font-size: 30px;
+}
+
+.column1{
+    width: 15%;
+}
+
+.column2{
+    width: 15%;
+}
+
+.icons{
+    color: white;
+    text-decoration: none;
+    padding-top: 20px;
+}
+
+.icon{
+    font-size: 50px;
+    color: #C70000;
+    text-decoration: none;
+}
