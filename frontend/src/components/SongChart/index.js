@@ -17,35 +17,46 @@ const SongChart = () => {
 
 
     return (
-        <div className={styles.songChart}>
-            <div className={styles.chartHeaders}>
-                <h2>CHARTS</h2>
-                <h3>TRENDING ON UNRAVEL</h3>
+        <>
+            <div className={styles.songChart}>
+                    CHARTS
             </div>
+            <h3 id={styles.chartsSub}>TRENDING ON UNRAVEL</h3>
             <div className={styles.chartContent}>
-                <ol>
+                {/* <ol> */}
+                <div className={styles.chartList}>
                     {songsArr.map((song) =>
                     // albumUrl, name, artistName
-                    <div key={song.id} className={styles.listedSong}>
-                        {/* link will eventually be the song page */}
-                        <NavLink to={`/songs/${song.id}`}>
-                            <li className={styles.insideSong} to='/'>
-                                <div className={styles.imgHolder}>
-                                    <img src={song.albumUrl} alt={song.albumName} />
+                    <a href={`/songs/${song.id}`}>
+                        <div key={song.id} className={styles.listedSong}>
+                            {/* link will eventually be the song page */}
+                            {/* <a href={`/songs/${song.id}`}> */}
+                                <div className={styles.insideSong}>
+                                    {song.id}
                                 </div>
-                                <div className={styles.name}>
-                                    {song.name}
-                                </div>
-                                <div>
-                                    {song.artistName}
-                                </div>
-                            </li>
-                        </NavLink>
-                    </div>
+                            {/* </a> */}
+                            {/* <a href={`/songs/${song.id}`}> */}
+                                    <div className={styles.imgHolder} style={{ backgroundImage: `url(${song.albumUrl})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                                        {/* <img src={song.albumUrl} alt={song.albumName} /> */}
+                                    </div>
+                            {/* </a> */}
+                            {/* <a href={`/songs/${song.id}`}> */}
+                                    <div className={styles.name}>
+                                        {song.name}
+                                    </div>
+                            {/* </a> */}
+                            {/* <a href={`/songs/${song.id}`}> */}
+                                    <div className={styles.artist}>
+                                        {song.artistName}
+                                    </div>
+                            {/* </a> */}
+                        </div>
+                    </a>
                     )}
-                </ol>
+                {/* </ol> */}
+                </div>
             </div>
-        </div>
+        </>
     )
 
 

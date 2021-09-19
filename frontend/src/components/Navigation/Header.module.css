@@ -6,7 +6,7 @@
     /* position: relative;
     right: 8px;
     bottom: 8px; */
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 
 
@@ -15,4 +15,10 @@
     font-family: 'Urbanist', sans-serif;
     text-decoration: none;
     color: white;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+    padding-top: 20px;
 }

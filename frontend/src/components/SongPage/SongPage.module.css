@@ -64,14 +64,14 @@
     background-color: whitesmoke;
     /* position: relative; */
     width: auto;
-    bottom: 8px;
+    /* bottom: 8px; */
 }
 
 #lyricAnnoContainer{
     display: flex;
     width: 970px;
     background-color: white;
-    margin-left: 2vw;
+    /* margin-left: 2vw; */
 }
 
 #lyricBodyDiv{
