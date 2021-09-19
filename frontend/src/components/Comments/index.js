@@ -49,18 +49,18 @@ export default function Comments(){
             </div> */}
             <div className={styles.commentBox}>
                 <div className={styles.commentList}>
-                    <ul className={styles.commentUl}>
+                    <div className={styles.commentUl}>
                         {commentsArr.map((comment) =>
-                        <li key={comment.id} className={styles.commentLi}>
+                        <div key={comment.id} className={styles.commentLi}>
                             <p className={styles.userName}>{comment?.User.username}</p>
                             {/* <p className={styles.userName}>{comment.username}</p> */}
                             <p className={styles.body}>{comment?.body}</p>
                             {/* placeholder for edit and delete buttons */}
                             {/* {sessionUser.id === comment.userId ? <button>Edit</button> : 'hello'} */}
                             {sessionUser.id === comment.userId ? <EditCommentForm comment={comment}/> : null}
-                        </li>
+                        </div>
                         )}
-                    </ul>
+                    </div>
                 </div>
             </div>
 
