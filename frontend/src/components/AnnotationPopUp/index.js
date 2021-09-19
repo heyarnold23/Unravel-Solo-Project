@@ -19,7 +19,6 @@ export default function AnnotationPopUp({anno, arr, start, end}){
     // },[dispatch, id])
 
     const foundObj = arr.find(object => object.id === anno)
-    console.log(foundObj);
 
 
     if(!anno){
