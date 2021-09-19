@@ -97,3 +97,13 @@
     width: 60%;
     background-color: grey;
 }
+
+#lyricBodyDiv{
+    font-size: 18px;
+    font-family: 'Urbanist', sans-serif;
+
+}
+
+small{
+    font-size: 18px;
+}
