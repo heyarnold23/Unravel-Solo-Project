@@ -17,11 +17,11 @@ const SongChart = () => {
 
 
     return (
-        <div className={styles.songChart}>
-            <div className={styles.chartHeaders}>
-                <h2>CHARTS</h2>
-                <h3>TRENDING ON UNRAVEL</h3>
+        <>
+            <div className={styles.songChart}>
+                    CHARTS
             </div>
+            <h3 id={styles.chartsSub}>TRENDING ON UNRAVEL</h3>
             <div className={styles.chartContent}>
                 <ol>
                     {songsArr.map((song) =>
@@ -45,7 +45,7 @@ const SongChart = () => {
                     )}
                 </ol>
             </div>
-        </div>
+        </>
     )
 
 

@@ -24,11 +24,11 @@
     transition: width 1000ms, color 800ms;
     text-align: left;
     overflow: hidden;
-
     text-decoration: none;
     color: transparent;
     font-family: 'Urbanist', sans-serif;
     font-size: 40px;
+    border-radius: 10px;
 
 }
 

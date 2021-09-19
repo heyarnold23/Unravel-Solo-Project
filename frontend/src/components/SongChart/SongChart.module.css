@@ -3,6 +3,20 @@
     width: 60px;
 } */
 
+.songChart{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    font-size: 60px;
+    /* padding: 5px; */
+    /* margin-top: 20px; */
+    font-family: 'Urbanist', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
 .imgHolder{
     display: flex;
     height: 60px;
@@ -21,4 +35,14 @@
 
 .name{
     display: flex;
+}
+
+#chartsSub{
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    color: #C70000;
+    margin-bottom: 20px;
 }
