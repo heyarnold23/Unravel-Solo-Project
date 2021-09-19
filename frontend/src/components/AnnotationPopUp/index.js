@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 // import {getSongs} from '../../store/songs';
 import AnnotationForm from '../AnnotationForm'
 import EditAnnotationForm from '../EditAnnotationForm';
+import styles from './AnnotationPopUp.module.css'
 
 
 export default function AnnotationPopUp({anno, arr, start, end}){
@@ -49,11 +50,11 @@ export default function AnnotationPopUp({anno, arr, start, end}){
 
 
     return (
-    <>
+    <div className={styles.anno}>
         <div>Annotation from</div>
         <div>{foundObj?.User.username}</div>
         <div>{foundObj?.body}</div>
         {sessionUser.id === foundObj?.userId ? <EditAnnotationForm annotation={foundObj}/> : null}
-    </>
+    </div>
     )
 }
