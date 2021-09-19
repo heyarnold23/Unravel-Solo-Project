@@ -65,6 +65,7 @@
     /* position: relative; */
     width: auto;
     /* bottom: 8px; */
+    border-bottom: 15px solid whitesmoke;
 }
 
 #lyricAnnoContainer{

@@ -20,7 +20,7 @@ export default function SongPage(){
     const song = songsObject[id]
 
     const body = song?.body
- 
+
 
     return(
         <>
@@ -59,11 +59,6 @@ export default function SongPage(){
                         {song?.body}
                     </div>
                 </div>
-
-
-
-
-
             </div>
         </>
     )
