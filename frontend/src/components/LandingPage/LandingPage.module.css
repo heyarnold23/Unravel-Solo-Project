@@ -43,3 +43,17 @@
 .panelSong{
 
 }
+
+.trendingArtists{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    font-size: 80px;
+    /* padding: 5px; */
+    /* margin-top: 20px; */
+    font-family: 'Urbanist', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
+
+}

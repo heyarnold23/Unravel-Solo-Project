@@ -4,6 +4,9 @@ import SongChart from "../SongChart";
 export const LandingPage = () => {
     return (
         <>
+            <div className={styles.trendingArtists}>
+                TRENDING
+            </div>
             <div className={styles.panelsContainer}>
                 <div className={styles.panel} style={{ backgroundImage: `url(https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F08%2Fkanye-west-donda-jay-z-travis-scott-lil-baby-fan-reactions-001.jpg?q=90&w=1400&cbr=1&fit=max)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                     <div className={styles.panelSong}>
