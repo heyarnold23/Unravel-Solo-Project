@@ -2,3 +2,13 @@
     background-color: grey;
 }
 
+.annoDiv{
+    /* z-index: 1; */
+    position:absolute;
+    top: 50vh;
+    right: 28vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 8px #B0A7A7;
+    overflow:auto;
+    width: 210px;
+}

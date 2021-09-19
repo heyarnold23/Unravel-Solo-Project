@@ -97,7 +97,7 @@ export default function SongLyrics({body}){
 
         {annoMenu && (
             <>
-                <div>
+                <div className={styles.annoDiv}>
                     <AnnotationPopUp anno={annoIdent} arr={annoArr} start={start} end={end}/>
                     <button onClick={closeMenu}>close</button>
                 </div>

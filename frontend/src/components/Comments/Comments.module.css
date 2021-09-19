@@ -1,0 +1,20 @@
+.commentBox{
+    background-color: whitesmoke;
+    width: 80%;
+    margin-left: 20px;
+    padding: 2px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.commentLi{
+    border-top: 2px solid #f5c1c1;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.userName{
+    font-size: 25px;
+    font-weight: bold;
+}

@@ -20,7 +20,7 @@ export default function SongPage(){
     const song = songsObject[id]
 
     const body = song?.body
- 
+
 
     return(
         <>
@@ -55,15 +55,10 @@ export default function SongPage(){
                         </div> */}
                         <CommentForm id={id}/>
                     </div>
-                    <div id={styles.annotateDiv}>
+                    {/* <div id={styles.annotateDiv}>
                         {song?.body}
-                    </div>
+                    </div> */}
                 </div>
-
-
-
-
-
             </div>
         </>
     )

@@ -1,0 +1,10 @@
+#commentForm{
+    background-color: whitesmoke;
+    width: 80%;
+    margin-left: 20px;
+    padding: 2px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

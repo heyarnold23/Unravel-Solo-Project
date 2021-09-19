@@ -65,6 +65,7 @@
     /* position: relative; */
     width: auto;
     /* bottom: 8px; */
+    border-bottom: 15px solid whitesmoke;
 }
 
 #lyricAnnoContainer{
@@ -95,4 +96,14 @@
     height: auto;
     width: 60%;
     background-color: grey;
+}
+
+#lyricBodyDiv{
+    font-size: 18px;
+    font-family: 'Urbanist', sans-serif;
+
+}
+
+small{
+    font-size: 18px;
 }
