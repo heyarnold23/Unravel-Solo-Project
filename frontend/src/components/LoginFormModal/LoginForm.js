@@ -26,19 +26,31 @@ function LoginForm() {
       });
   }
 
+  const demoSubmit = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    return dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }))
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      });
+  }
+
   return (
     <div id={styles.formHolder}>
-      <h2>Login</h2>
+      <div className={styles.loginText}>
+       <h2> Sign In </h2>
+      </div>
       <form onSubmit={handleSubmit} id={styles.form}>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
-
         <div id={styles.username}>
           <label>
             Username or Email
             <div>
               <input
+                className={styles.usernameInput}
                 type="text"
                 value={credential}
                 onChange={(e) => setCredential(e.target.value)}
@@ -52,6 +64,7 @@ function LoginForm() {
             Password
             <div>
             <input
+              className={styles.usernameInput}
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -60,8 +73,15 @@ function LoginForm() {
             </div>
           </label>
         </div>
-        <button type="submit">Log In</button>
+        <div>
+        <button className={styles.logInButton} type="submit">Log In</button>
+        </div>
       </form>
+      <div className={styles.demo}>
+        <form onSubmit={demoSubmit}>
+          <button className={styles.demoButton}type="submit">Demo Log In</button>
+        </form>
+      </div>
     </div>
   );
 }
