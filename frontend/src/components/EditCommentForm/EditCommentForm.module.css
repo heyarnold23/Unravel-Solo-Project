@@ -1,0 +1,43 @@
+.editDelete{
+    font-family: 'Urbanist', sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    border-color: #C70000;
+    color: #C70000;
+    transition: background-color 200ms;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 5px;
+    /* margin-bottom: 10px; */
+}
+
+.editDelete:hover{
+    background-color: #dbb9b9;
+}
+
+.editInput{
+    font-family: 'Urbanist', sans-serif;
+    width: 100%;
+    resize: none;
+    border: 2px solid rgb(168, 165, 165);
+}
+
+.submitCancel{
+    font-family: 'Urbanist', sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    border-color: #C70000;
+    color: #C70000;
+    transition: background-color 200ms;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.submitCancel:hover{
+    background-color: #dbb9b9;
+}
+
+#commentForm{
+    margin-top: 20px;
+}

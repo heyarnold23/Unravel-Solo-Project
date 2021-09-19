@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { editAnnotation } from '../../store/annotations';
 import { useDispatch } from 'react-redux';
 import { deleteAnnotation } from '../../store/annotations';
+import styles from './EditAnnotationForm.module.css'
 
 // import styles from ''
 

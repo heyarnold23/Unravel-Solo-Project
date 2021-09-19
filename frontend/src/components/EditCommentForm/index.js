@@ -73,8 +73,8 @@ export default function EditCommentForm ({comment}) {
 
     return (
         <>
-            <button onClick={openMenu}>edit</button>
-            <button onClick={handleDelete}>delete</button>
+            <button className={styles.editDelete} onClick={openMenu}>edit</button>
+            <button className={styles.editDelete} onClick={handleDelete}>delete</button>
             {showMenu && (
             <>
                 <div id={styles.commentForm}>
@@ -83,13 +83,14 @@ export default function EditCommentForm ({comment}) {
                         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                     </ul> */}
                         <textarea
+                            className={styles.editInput}
                             value={body}
                             onChange={updateBody}
                             name="body"
                             placeholder="Add a comment"
                         ></textarea>
-                        <button onClick={!openMenu}type="submit">Submit</button>
-                        <button onClick={closeMenu}>cancel</button>
+                        <button className={styles.submitCancel} onClick={!openMenu}type="submit">Submit</button>
+                        <button className={styles.submitCancel} onClick={closeMenu}>Cancel</button>
                     </form>
                 </div>
             </>
