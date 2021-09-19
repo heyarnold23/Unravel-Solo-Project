@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import styles from './Navigation.module.css';
 // import { RiHome3Line } from "react-icons/ri";
 import LoginFormModal from '../LoginFormModal';
+import SignupFormModal from '../SignupFormPage';
 import Header from './Header';
 
 
@@ -19,7 +20,8 @@ function Navigation({ isLoaded }){
     } else {
       sessionLinks = (
         <>
-          <NavLink to="/signup" className={styles.signUpText}>SIGN UP</NavLink>
+          {/* <NavLink to="/signup" >SIGN UP</NavLink> */}
+          <SignupFormModal />
           <LoginFormModal/>
         </>
       );

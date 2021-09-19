@@ -26,9 +26,9 @@ function App() {
           <Route path='/songs/:id'>
             <SongPage />
           </Route>
-          <Route path="/signup">
+          {/* <Route path="/signup">
             <SignupFormPage />
-          </Route>
+          </Route> */}
         </Switch>
       )}
       <Footer />
