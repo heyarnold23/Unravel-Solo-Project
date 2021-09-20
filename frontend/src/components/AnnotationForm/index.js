@@ -32,6 +32,7 @@ export default function AnnotationForm({start, end}){
         if(body.length > 0 || body.length === 0){
         setErrors([]);
         dispatch(createAnnotation(newAnno));
+        setBody('');
 
 
         //  if (created) {

@@ -48,6 +48,7 @@ export default function SongPage(){
                 <div id={styles.lyricAnnoContainer}>
                     <div id={styles.lyricBodyDiv}>
                         {/* <p>{song?.body}</p> */}
+                        <p id={styles.annoHint}>(Click and highlight text to start annotating!)</p>
                         <SongLyrics body={body}/>
                         {/* Put below div back on 57 if doesnt work */}
                         {/* <div id={styles.commentDiv}>
