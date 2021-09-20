@@ -73,8 +73,12 @@ export default function EditCommentForm ({comment}) {
 
     return (
         <>
-            <button className={styles.editDelete} onClick={openMenu}>edit</button>
-            <button className={styles.editDelete} onClick={handleDelete}>delete</button>
+            {!showMenu && (
+            <>
+                <button className={styles.editDelete} onClick={openMenu}>edit</button>
+                <button className={styles.editDelete} onClick={handleDelete}>delete</button>
+            </>
+            )}
             {showMenu && (
             <>
                 <div id={styles.commentForm}>
