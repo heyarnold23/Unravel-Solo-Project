@@ -65,6 +65,7 @@ export default function EditAnnotationForm ({annotation}) {
         };
 
         dispatch(deleteAnnotation(annotationData))
+        window.location.reload(false);
     }
 
     // const handleCancelClick = (e) => {
