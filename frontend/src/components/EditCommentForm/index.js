@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { editComment } from '../../store/comments';
 import { useDispatch } from 'react-redux';
 import { deleteComment } from '../../store/comments';
+import {MdDeleteForever} from 'react-icons/md'
+import {FiEdit} from 'react-icons/fi'
 
 import styles from './EditCommentForm.module.css'
 
@@ -73,8 +75,12 @@ export default function EditCommentForm ({comment}) {
 
     return (
         <>
-            <button className={styles.editDelete} onClick={openMenu}>edit</button>
-            <button className={styles.editDelete} onClick={handleDelete}>delete</button>
+            {!showMenu && (
+            <>
+                <span className={styles.otherEditAndDelete} onClick={openMenu}><FiEdit /></span>
+                <span className={styles.otherEditAndDelete} onClick={handleDelete}><MdDeleteForever /></span>
+            </>
+            )}
             {showMenu && (
             <>
                 <div id={styles.commentForm}>

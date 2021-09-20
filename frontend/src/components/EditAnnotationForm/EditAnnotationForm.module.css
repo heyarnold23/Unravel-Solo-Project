@@ -16,6 +16,13 @@
     background-color: #dbb9b9;
 }
 
+.otherEditAndDelete{
+    cursor: pointer;
+    font-size: 25px;
+    color: #990404;
+}
+
+
 .editInput{
     font-family: 'Urbanist', sans-serif;
     width: 90%;

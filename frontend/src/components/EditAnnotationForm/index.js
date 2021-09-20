@@ -4,6 +4,8 @@ import { editAnnotation } from '../../store/annotations';
 import { useDispatch } from 'react-redux';
 import { deleteAnnotation } from '../../store/annotations';
 import styles from './EditAnnotationForm.module.css'
+import {MdDeleteForever} from 'react-icons/md'
+import {FiEdit} from 'react-icons/fi'
 
 // import styles from ''
 
@@ -77,8 +79,8 @@ export default function EditAnnotationForm ({annotation}) {
         <>
             {!showMenu && (
             <>
-                <button className={styles.editDelete} onClick={openMenu}>edit</button>
-                <button className={styles.editDelete} onClick={handleDelete}>delete</button>
+                <span className={styles.otherEditAndDelete} onClick={openMenu}><FiEdit /></span>
+                <span className={styles.otherEditAndDelete} onClick={handleDelete}><MdDeleteForever /></span>
             </>
             )}
             {showMenu && (
