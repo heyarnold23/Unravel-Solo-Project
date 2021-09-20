@@ -1,4 +1,27 @@
 .anno{
-   
+    /* position: sticky;
+    top: 0;
+    left: 0; */
 
+
+}
+
+.annoFrom{
+
+}
+
+.annoUser{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.annoBody{
+    border-top: 2px solid #f5c1c1;
+    border-bottom: 2px solid #f5c1c1;
+    overflow-wrap: break-word;
+    font-family: 'Urbanist', sans-serif;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

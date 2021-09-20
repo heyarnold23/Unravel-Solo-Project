@@ -8,6 +8,7 @@
     cursor: pointer;
     padding: 5px;
     margin-right: 5px;
+    margin-top: 5px;
     /* margin-bottom: 10px; */
 }
 
@@ -17,7 +18,7 @@
 
 .editInput{
     font-family: 'Urbanist', sans-serif;
-    width: 100%;
+    width: 90%;
     resize: none;
     border: 2px solid rgb(168, 165, 165);
 }
@@ -36,8 +37,4 @@
 
 .submitCancel:hover{
     background-color: #dbb9b9;
-}
-
-#commentForm{
-    margin-top: 20px;
 }

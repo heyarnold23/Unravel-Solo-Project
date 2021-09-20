@@ -35,9 +35,9 @@ export default function AnnotationPopUp({anno, arr, start, end}){
     if(!sessionUser){
         return(
             <>
-        <div>Annotation from</div>
-        <div>{foundObj?.User.username}</div>
-        <div>{foundObj?.body}</div>
+        <div className={styles.annoFrom}>Annotation from</div>
+        <div className={styles.annoUser}>{foundObj?.User.username}</div>
+        <div className={styles.annoBody}>{foundObj?.body}</div>
             </>
         )
     }
@@ -50,9 +50,9 @@ export default function AnnotationPopUp({anno, arr, start, end}){
 
     return (
     <div className={styles.anno}>
-        <div>Annotation from</div>
-        <div>{foundObj?.User.username}</div>
-        <div>{foundObj?.body}</div>
+        <div className={styles.annoFrom}>Annotation from</div>
+        <div className={styles.annoUser}>{foundObj?.User.username}</div>
+        <div className={styles.annoBody}>{foundObj?.body}</div>
         {sessionUser.id === foundObj?.userId ? <EditAnnotationForm annotation={foundObj}/> : null}
     </div>
     )

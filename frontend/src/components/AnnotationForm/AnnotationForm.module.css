@@ -1,0 +1,22 @@
+.submitCancel{
+    font-family: 'Urbanist', sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    border-color: #C70000;
+    color: #C70000;
+    transition: background-color 200ms;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.submitCancel:hover{
+    background-color: #dbb9b9;
+}
+
+.input{
+    font-family: 'Urbanist', sans-serif;
+    width: 90%;
+    resize: none;
+    border: 2px solid rgb(168, 165, 165);
+}

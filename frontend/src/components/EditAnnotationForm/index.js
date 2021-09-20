@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { editAnnotation } from '../../store/annotations';
 import { useDispatch } from 'react-redux';
 import { deleteAnnotation } from '../../store/annotations';
+import styles from './EditAnnotationForm.module.css'
 
 // import styles from ''
 
@@ -64,6 +65,7 @@ export default function EditAnnotationForm ({annotation}) {
         };
 
         dispatch(deleteAnnotation(annotationData))
+        window.location.reload(false);
     }
 
     // const handleCancelClick = (e) => {
@@ -73,7 +75,12 @@ export default function EditAnnotationForm ({annotation}) {
 
     return (
         <>
-
+            {!showMenu && (
+            <>
+                <button className={styles.editDelete} onClick={openMenu}>edit</button>
+                <button className={styles.editDelete} onClick={handleDelete}>delete</button>
+            </>
+            )}
             {showMenu && (
             <>
                 <div>
@@ -82,19 +89,19 @@ export default function EditAnnotationForm ({annotation}) {
                         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                     </ul> */}
                         <textarea
+                            className={styles.editInput}
+                            rows='3'
                             value={body}
                             onChange={updateBody}
                             name="body"
                             placeholder="Edit an annotation"
                         ></textarea>
-                        <button onClick={!openMenu}type="submit">Submit</button>
-                        <button onClick={closeMenu}>cancel</button>
+                        <button className={styles.submitCancel} onClick={!openMenu}type="submit">Submit</button>
+                        <button className={styles.submitCancel} onClick={closeMenu}>cancel</button>
                     </form>
                 </div>
             </>
             )}
-            <button onClick={openMenu}>edit</button>
-            <button onClick={handleDelete}>delete</button>
         </>
     )
 

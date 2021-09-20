@@ -71,12 +71,15 @@ export default function CommentForm ({id}){
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
                     <textarea
+                        rows='2'
+                        // cols='40'
+                        className={styles.commentInput}
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
                         name="body"
                         placeholder="Add a comment"
                     ></textarea>
-                    <button type="submit">Submit</button>
+                    <button className={styles.submit}type="submit">Submit</button>
                 </form>
             </div>
             <Comments />

@@ -2,6 +2,7 @@ import {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {createAnnotation} from '../../store/annotations'
 import { useParams } from 'react-router-dom';
+import styles from './AnnotationForm.module.css'
 
 
 export default function AnnotationForm({start, end}){
@@ -66,12 +67,14 @@ export default function AnnotationForm({start, end}){
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul> */}
                     <textarea
+                        className={styles.input}
+                        rows='4'
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
                         name="body"
-                        placeholder="Add an annotation"
+                        placeholder="Don't just put the lyrics in your own words-drop some knowledge!"
                     ></textarea>
-                    <button type="submit">Submit</button>
+                    <button className={styles.submitCancel} type="submit">Submit</button>
                 </form>
             </div>
         </>

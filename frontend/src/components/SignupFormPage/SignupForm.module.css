@@ -1,0 +1,99 @@
+.signText{
+    font-size: 12px;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-right: 5px;
+}
+
+#formHolder{
+    height: 70vh;
+    display: flex;
+    width: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(19, 18, 18);
+    color: white;
+}
+
+.loginText{
+    display: flex;
+    height: 10px;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
+
+}
+
+ #username{
+    display: flex;
+    /* margin-bottom: 20px; */
+
+}
+
+#password{
+    display: flex;
+    /* margin-bottom: 20px; */
+    margin-top: 10px;
+
+}
+
+#form{
+    display: flex;
+    font-family: 'Urbanist', sans-serif;
+    background-color: rgba(165, 161, 161, 0.1);
+    width: 50%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.logInButton{
+    font-family: 'Urbanist', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(167, 163, 163, 0.2);
+    color: white;
+    border: 1px solid #444;
+    border-radius: 2px;
+    padding: 5px 9px;
+    cursor: pointer;
+}
+
+.logInButton:hover{
+    background-color: rgba(167, 163, 163, 0.1);
+
+}
+
+.usernameInput{
+    background-color: rgba(167, 163, 163, 0.2);
+    border-radius: 2px;
+    color: white;
+    border: 1px solid #444;
+    margin-top: 10px;
+}
+
+.demo{
+    display: flex;
+    width: 100%;
+    /* margin-left: 10vw; */
+    justify-content: center;
+}
+
+.demoButton{
+    width: 10vw;
+    font-family: 'Urbanist', sans-serif;
+    margin-bottom: 20px;
+    background-color: rgba(167, 163, 163, 0.2);
+    color: white;
+    border: 1px solid #444;
+    border-radius: 2px;
+    padding: 5px 9px;
+    cursor: pointer;
+}
+
+.demoButton:hover{
+    background-color: rgba(167, 163, 163, 0.1);
+
+}
