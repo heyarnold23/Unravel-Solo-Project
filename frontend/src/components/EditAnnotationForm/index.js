@@ -74,8 +74,12 @@ export default function EditAnnotationForm ({annotation}) {
 
     return (
         <>
-            <button className={styles.editDelete} onClick={openMenu}>edit</button>
-            <button className={styles.editDelete} onClick={handleDelete}>delete</button>
+            {!showMenu && (
+            <>
+                <button className={styles.editDelete} onClick={openMenu}>edit</button>
+                <button className={styles.editDelete} onClick={handleDelete}>delete</button>
+            </>
+            )}
             {showMenu && (
             <>
                 <div>
