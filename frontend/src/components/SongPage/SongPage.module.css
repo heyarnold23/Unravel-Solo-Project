@@ -108,3 +108,8 @@
 small{
     font-size: 18px;
 }
+
+#annoHint{
+    color: grey;
+    margin-left: 32px;
+}
