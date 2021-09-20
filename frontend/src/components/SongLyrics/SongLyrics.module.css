@@ -7,8 +7,19 @@
     position:absolute;
     top: 50vh;
     right: 28vw;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 4px 8px #B0A7A7;
+    background-color: transparent;
     overflow:auto;
     width: 210px;
+    height: 100%;
+    padding-left: 20px;
+    border-left: 2px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.inAnnoDiv{
+    /* position: sticky;
+    top: 0;
+    left: 0; */
+
 }
