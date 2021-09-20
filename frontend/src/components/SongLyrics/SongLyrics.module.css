@@ -23,3 +23,19 @@
     left: 0; */
 
 }
+
+.close{
+    font-family: 'Urbanist', sans-serif;
+    background-color: transparent;
+    border-color: #C70000;
+    color: #C70000;
+    transition: background-color 200ms;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.close:hover{
+    background-color: #dbb9b9;
+
+}

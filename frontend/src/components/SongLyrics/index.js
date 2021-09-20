@@ -99,7 +99,7 @@ export default function SongLyrics({body}){
             <>
                 <div className={styles.annoDiv}>
                     <AnnotationPopUp anno={annoIdent} arr={annoArr} start={start} end={end}/>
-                    <button onClick={closeMenu}>close</button>
+                    <button className={styles.close}onClick={closeMenu}>close</button>
                 </div>
             </>
         )}
