@@ -1,6 +1,6 @@
 # Unravel
 
-![GIF of Unravel splash page](https://i.ibb.co/kXjtQDG/Hnet-image.gif)
+![GIF of Unravel splash page](https://i.ibb.co/99XttnC/ezgif-6-929927105df6.gif)
 
 ## What is Unravel?
 
