@@ -11,8 +11,15 @@
 ### Annotations
 
 Logged in users are able to highlight lines of text within a song page and share their thoughts on what they think it means.
+They can also update it at any time as well as delete it if they desire. 
 
 ![GIF of Unravel annotation feature](https://i.ibb.co/F4z95qg/ezgif-6-6d073778945c.gif)
+
+### Comments
+
+Logged in users are able to comment on song pages, whether just to provide extra thought on the song overall or just for fun!
+
+![GIF of Unravel comment feature](https://i.ibb.co/GCCJcLd/ezgif-6-48dfc67ff2be.gif)
 
 ## Application Architecture
 
