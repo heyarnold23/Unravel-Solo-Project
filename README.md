@@ -10,7 +10,7 @@
 
 ### Annotations
 
-Logged in users are able to highlight lines of text within a song page and share their thoughts on what they think it meant.
+Logged in users are able to highlight lines of text within a song page and share their thoughts on what they think it means.
 
 ![GIF of Unravel annotation feature](https://i.ibb.co/F4z95qg/ezgif-6-6d073778945c.gif)
 
