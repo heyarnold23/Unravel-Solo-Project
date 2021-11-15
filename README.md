@@ -1,10 +1,18 @@
 # Unravel
 
-![Image of Unravel splash page](https://i.ibb.co/kXjtQDG/Hnet-image.gif)
+![GIF of Unravel splash page](https://i.ibb.co/kXjtQDG/Hnet-image.gif)
 
 ## What is Unravel?
 
 [Unravel](https://unravel-genius-clone.herokuapp.com/) is a full stack app utilizing PostgreSQL, Express, and React/Redux. Unravel allows logged in users to browse various song lyrics pages and share their interpretations of what a line means via annotations. Aside from that, users can also post comments on each song page as well. Currently, Unravel is only seeded with a few demo users as well as a handful of song pages to interact with.
+
+## Features
+
+### Annotations
+
+Logged in users are able to highlight lines of text within a song page and share their thoughts on what they think it meant.
+
+![GIF of Unravel annotation feature](https://i.ibb.co/F4z95qg/ezgif-6-6d073778945c.gif)
 
 ## Application Architecture
 
