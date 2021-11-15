@@ -1,6 +1,6 @@
 # Unravel
 
-![Image of Unravel splash page](https://i.ibb.co/xFPj68n/Hnet-image.gif)
+![Image of Unravel splash page](https://i.ibb.co/kXjtQDG/Hnet-image.gif)
 
 ## What is UltraPlus?
 
