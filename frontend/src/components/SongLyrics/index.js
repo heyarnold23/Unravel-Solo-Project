@@ -63,14 +63,14 @@ export default function SongLyrics({body}){
         }
     }
 
-    const color = `#E9E9E9`;
+    // const color = `#E9E9E9`;
 
     const highlighted = async (start, end, annoId) => {
         if (start > end) {
             for (let i = start; i >= end; i--) {
                 const old = document.getElementById(`${i}`);
                 const newest = document.createElement('span');
-                newest.style.backgroundColor = color;
+                // newest.style.backgroundColor = color;
                 newest?.setAttribute('id', `annoId: ${annoId}`)
                 newest.myParam = annoId
                 newest.addEventListener('click', openMenu)
@@ -83,7 +83,7 @@ export default function SongLyrics({body}){
             for (let i = start; i <= end; i++) {
                 const old = document.getElementById(`${i}`);
                 const newest = document.createElement('span');
-                newest.style.backgroundColor = color;
+                // newest.style.backgroundColor = color;
                 newest?.setAttribute('id', `annoId: ${annoId}`)
                 newest.myParam = annoId
                 newest.addEventListener('click', openMenu)
