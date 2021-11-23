@@ -33,7 +33,7 @@ function ProfileButton({ user }) {
 
   return (
     <>
-        <FiUser onClick={openMenu}/>
+        <FiUser id={styles.profileButton} onClick={openMenu}/>
         {showMenu && (
             <div className={styles.popOut}>
               <span className={styles.account}>Account</span>
