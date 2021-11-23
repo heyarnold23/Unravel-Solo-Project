@@ -50,7 +50,13 @@ export default function SongLyrics({body}){
 
             let chosen = window.getSelection();
             let start = chosen.anchorNode.parentElement.id;
+            // console.log(start);
             let end = chosen.focusNode.parentElement.id
+            // console.log(end);
+            if (start === end) {
+                setAnnoMenu(false)
+                return
+            }
             setStart(start)
             setEnd(end)
             setAnnoMenu(true)
