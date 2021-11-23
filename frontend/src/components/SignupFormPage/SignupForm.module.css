@@ -1,7 +1,8 @@
 .signText{
     font-size: 12px;
     font-family: 'Noto Sans JP', sans-serif;
-    margin-right: 5px;
+    margin-right: 15px;
+    cursor: pointer;
 }
 
 #formHolder{
