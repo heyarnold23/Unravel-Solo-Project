@@ -1,60 +1,59 @@
-.panelsContainer{
-    display: flex;
-    height: 500px;
-    width: 100%;
-    /* position: relative;
-    right: 8px;
-    bottom: 8px; */
-    justify-content: center;
-    align-items: center;
-    /* background-color: #7a0505; */
-    /* background-color: #9A9A9A; */
-    background-color: black;
+.trendingArtists {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-family: "Urbanist", sans-serif;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+.panelsContainer {
+  display: flex;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
 }
 
 .panel {
-    width: 17%;
-    height: 90%;
-    background-position: center;
-    /* border-radius: 10px; */
-    padding: 5px 5px 5px 5px;
-    margin: 5px 1% 5px 1%;
-    /* float: left;
-    position: relative; */
-    transition: width 1000ms, color 800ms;
-    text-align: left;
-    overflow: hidden;
-    text-decoration: none;
-    color: transparent;
-    font-family: 'Urbanist', sans-serif;
-    font-size: 40px;
-    border-radius: 10px;
-
+  width: 17%;
+  height: 90%;
+  background-position: center;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 1% 5px 1%;
+  transition: width 1000ms, color 800ms;
+  text-align: left;
+  overflow: hidden;
+  text-decoration: none;
+  color: transparent;
+  font-family: "Urbanist", sans-serif;
+  font-size: 20px;
+  border-radius: 10px;
 }
 
-.panel:hover{
-    width:100%;
-    font-family: 'Urbanist', sans-serif;
-    font-size: 40px;
-    font-weight: bolder;
-    color: #C70000;;
-    letter-spacing: 2px;
+.panel:hover {
+  width: 100%;
+  font-family: "Urbanist", sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #c70000;
+  letter-spacing: 2px;
 }
 
-.panelSong{
-
-}
-
-.trendingArtists{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10vh;
+@media only screen and (min-width: 768px) {
+  .trendingArtists {
     font-size: 80px;
-    /* padding: 5px; */
-    /* margin-top: 20px; */
-    font-family: 'Urbanist', sans-serif;
-    font-weight: bolder;
-    letter-spacing: 2px;
+  }
 
+  .panelsContainer {
+    height: 500px;
+  }
+
+  .panel {
+    font-size: 40px;
+  }
+
+  .panel:hover {
+    font-size: 40px;
+  }
 }
